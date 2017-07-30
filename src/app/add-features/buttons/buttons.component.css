@@ -1,0 +1,18 @@
+.header {
+    width: 100vw;
+    height: 150px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.banner {
+    width: 100vw;
+    height: 130px;
+    background: linear-gradient(to bottom right, #BF186F, #39C9DF);
+}
+
+button {
+    height: 40px;
+    align-self: flex-end;
+}

@@ -7,6 +7,7 @@ import { ListIncComponent } from './list-features/list-inc/list-inc.component';
 import { ListExpComponent } from './list-features/list-exp/list-exp.component';
 import { AddIncComponent } from './add-features/add-inc/add-inc.component';
 import { AddExpComponent } from './add-features/add-exp/add-exp.component';
+import { ListComponent } from './list-features/list/list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AddExpComponent } from './add-features/add-exp/add-exp.component';
     ListIncComponent,
     ListExpComponent,
     AddIncComponent,
-    AddExpComponent
+    AddExpComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule
