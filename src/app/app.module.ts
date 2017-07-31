@@ -12,6 +12,7 @@ import { ChartsListComponent } from './charts/charts-list/charts-list.component'
 import { ChartsItemsComponent } from './charts/charts-list/charts-items/charts-items.component';
 import { OverlayExpComponent } from './overlay/overlay-exp/overlay-exp.component';
 import { OverlayIncComponent } from './overlay/overlay-inc/overlay-inc.component';
+import { TransactionsPopUpComponent } from './transactions/transactions-pop-up/transactions-pop-up.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { OverlayIncComponent } from './overlay/overlay-inc/overlay-inc.component
     ChartsListComponent,
     ChartsItemsComponent,
     OverlayExpComponent,
-    OverlayIncComponent
+    OverlayIncComponent,
+    TransactionsPopUpComponent
   ],
   imports: [
     BrowserModule
