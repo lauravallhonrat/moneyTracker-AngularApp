@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transactions-items.component.css']
 })
 export class TransactionsItemsComponent implements OnInit {
-  transactions = [];
+  
 
   constructor() { }
 
