@@ -15,4 +15,14 @@
 button {
     height: 40px;
     align-self: flex-end;
+    border-radius: 40px;
+    color: #fff;
+}
+
+.exp {
+    background-color: #BD1A70;
+}
+
+.inc {
+    background-color: #3DC4DC;
 }
