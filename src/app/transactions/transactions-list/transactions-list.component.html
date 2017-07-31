@@ -4,12 +4,17 @@
     <button class="btn btn-success">New transaction</button>
 </div>
 
+
+
 <div class="row">
-    <a href="#" class="list-group-item clearfix">
-        <h4 class="list-group-item-heading">{{category}}</h4>
-        <p class="list-group-item-text">{{amount}}</p>
-        <p class="list-group-item-text">{{date}}</p>
-        <img src={{iconpath}} alt="" class="img-responsive" style="max-height: 30px">
+    <a href="#" class="list-group-item clearfix" *ngFor="let item of transactions">
+        <!-- the ngFor allows us to loop through the elmts in transactions - transactions being the name of the array of Transaction in the trans-list.comp -->
+        <h4 class="list-group-item-heading">{{item.category}}
+            <!-- calling this with item.nameofthepropfromtrans-list.comp -->
+        </h4>
+        <p class="list-group-item-text">{{item.amount}}</p>
+        <p class="list-group-item-text">{{item.date}}</p>
+        <img src="{{item.iconPath}}" alt="" class="img-responsive" style="max-height: 30px">
     </a>
     <app-transactions-items></app-transactions-items>
 </div>
