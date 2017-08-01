@@ -1,8 +1,14 @@
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+<div class="row">
+    <p class="list-group-item-heading">{{transaction.category}}
+        <!-- calling this with item.nameofthepropfromtrans-list.comp -->
+    </p>
+    <p class="list-group-item-text">{{transaction.amount}}</p>
+    <p class="list-group-item-text">{{transaction.date}}</p>
+    <img src="{{transaction.iconPath}}" alt="" class="img-responsive" style="max-height: 30px">
+</div>
 
-        <!-- Modal content-->
+<!-- <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -17,4 +23,4 @@
         </div>
 
     </div>
-</div>
+</div> -->

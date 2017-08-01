@@ -1,0 +1,10 @@
+<div class="row">
+    <app-transactions-list (transactionWasSelected)="selectedTransaction = $event"></app-transactions-list>
+    <!-- transactionWasSelected comes from transaction list ts file -->
+</div>
+<div class="row">
+    <app-transactions-pop-up *ngIf="selectedTransaction; else infoText" [transaction]="selectedTransaction"></app-transactions-pop-up>
+    <ng-template #infoText>
+        <p>please select a transaction</p>
+    </ng-template>
+</div>

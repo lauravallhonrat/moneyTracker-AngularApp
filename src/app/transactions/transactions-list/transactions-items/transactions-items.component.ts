@@ -1,6 +1,6 @@
 import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
 //import input decorator, event emitter, output
-import {Transaction} from '../transactions.model';
+import {Transaction} from '../../transactions.model';
 //import transaction type from transactions model file
 
 @Component({
