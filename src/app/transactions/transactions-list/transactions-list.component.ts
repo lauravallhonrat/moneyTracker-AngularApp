@@ -17,7 +17,10 @@ export class TransactionsListComponent implements OnInit {
   // transactions is a given name, Transaction[] refers to the Transaction class name from the transaction.model.ts
   // we create a new Transaction with the different elements we defined in the model.
   // we will use them in the HTML
-
+  // clicked(event) {
+  //     console.log('p clicked!');
+      
+  //   }
   constructor() { }
 
   ngOnInit() {
