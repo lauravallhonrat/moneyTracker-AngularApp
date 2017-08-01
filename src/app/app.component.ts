@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  loadedOverlay = 'expense';
+
+  onNavigate(overlay: string){
+    this.loadedOverlay = overlay;
+  }
 }

@@ -1,6 +1,6 @@
 <div class="container">
-    <app-header></app-header>
-
+    <app-header (featureSelected)="onNavigate($event)"></app-header>
+    <!-- event method from header component -->
     <div class="col-md-4">
         <app-transactions-list></app-transactions-list>
     </div>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="row">
-        <app-overlay-exp></app-overlay-exp>
+        <app-overlay-exp *ngIf="loadedOverlay === 'expense'"></app-overlay-exp>
     </div>
 
 </div>
