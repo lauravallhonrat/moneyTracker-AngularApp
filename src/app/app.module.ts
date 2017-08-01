@@ -13,6 +13,7 @@ import { ChartsItemsComponent } from './charts/charts-list/charts-items/charts-i
 import { OverlayExpComponent } from './overlay/overlay-exp/overlay-exp.component';
 import { OverlayIncComponent } from './overlay/overlay-inc/overlay-inc.component';
 import { TransactionsPopUpComponent } from './transactions/transactions-pop-up/transactions-pop-up.component';
+import { DdDirective } from './dd.directive';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { TransactionsPopUpComponent } from './transactions/transactions-pop-up/t
     ChartsItemsComponent,
     OverlayExpComponent,
     OverlayIncComponent,
-    TransactionsPopUpComponent
+    TransactionsPopUpComponent,
+    DdDirective
   ],
   imports: [
     BrowserModule
