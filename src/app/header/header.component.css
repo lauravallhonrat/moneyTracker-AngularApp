@@ -1,0 +1,14 @@
+.banner {
+    position: relative;
+    width: 100vw;
+    height: 130px;
+    margin-bottom: 40px;
+    background-color: royalblue;
+    display: flex;
+    justify-content: center;
+}
+
+.button-wrap {
+    position: absolute;
+    margin-top: 110px;
+}
