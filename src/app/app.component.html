@@ -14,7 +14,12 @@
     </div>
 
     <div class="row">
+        <!-- assign loaded overlay event to expense in app component -->
         <app-overlay-exp *ngIf="loadedOverlay === 'expense'"></app-overlay-exp>
+        <!-- expense is a keyword coming from header html -->
     </div>
-
+    <div class="row">
+        <app-overlay-inc *ngIf="loadedOverlay !== 'expense'"></app-overlay-inc>
+    </div>
+    <!-- if its not expenses overlay,switches to income overlay -->
 </div>
