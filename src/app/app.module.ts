@@ -14,6 +14,7 @@ import { OverlayExpComponent } from './overlay/overlay-exp/overlay-exp.component
 import { OverlayIncComponent } from './overlay/overlay-inc/overlay-inc.component';
 import { TransactionsPopUpComponent } from './transactions/transactions-pop-up/transactions-pop-up.component';
 import { DdDirective } from './dd.directive';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { DdDirective } from './dd.directive';
     OverlayExpComponent,
     OverlayIncComponent,
     TransactionsPopUpComponent,
-    DdDirective
+    DdDirective,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule

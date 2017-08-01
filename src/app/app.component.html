@@ -1,18 +1,17 @@
 <div class="container">
     <app-header (featureSelected)="onNavigate($event)"></app-header>
     <!-- event method from header component -->
-    <div class="col-md-4">
-        <app-transactions-list></app-transactions-list>
+    <div class="row">
+        <app-transactions></app-transactions>
     </div>
 
-    <div class="col-md-4">
+    <div class="row">
         <app-budgets-list></app-budgets-list>
     </div>
 
-    <div class="col-md-4">
+    <div class="row">
         <app-charts-list></app-charts-list>
     </div>
-
     <div class="row">
         <!-- assign loaded overlay event to expense in app component -->
         <app-overlay-exp *ngIf="loadedOverlay === 'expense'"></app-overlay-exp>
@@ -22,4 +21,5 @@
         <app-overlay-inc *ngIf="loadedOverlay !== 'expense'"></app-overlay-inc>
     </div>
     <!-- if its not expenses overlay,switches to income overlay -->
+
 </div>

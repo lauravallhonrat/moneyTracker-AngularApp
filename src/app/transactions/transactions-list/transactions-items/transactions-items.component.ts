@@ -1,6 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
-//import input decorator
-import {Transaction} from '../transactions.model';
+import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
+//import input decorator, event emitter, output
+import {Transaction} from '../../transactions.model';
 //import transaction type from transactions model file
 
 @Component({
@@ -14,7 +14,10 @@ export class TransactionsItemsComponent implements OnInit {
   //this will be defined on the transaction list html file
 @Input() item: Transaction;
 // This item here is used in trans-list-comp-html in the ngFor
-// I ADDED THAT !!!!!!
+//new event emiter when you call on Selected (item html file)
+//event emitter will not pass any information so we use void
+//use Output decorator o we listen the element from outside
+@Output() transactionSelected = new EventEmitter<void>(); 
 
 
   @Input() transaction: Transaction;
@@ -22,5 +25,7 @@ export class TransactionsItemsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSelected(){
+    this.transactionSelected.emit();//call emit when emitEmitter is used
+  }
 }
