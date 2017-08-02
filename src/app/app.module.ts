@@ -20,6 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, MdCheckboxModule} from '@angular/material';
 
 import { SidebarModule } from 'ng-sidebar';
+import{TransactionService} from './transactions/transactions.service';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { SidebarModule } from 'ng-sidebar';
     MaterialModule,
     SidebarModule.forRoot()
   ],
-  providers: [],
+  providers: [TransactionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

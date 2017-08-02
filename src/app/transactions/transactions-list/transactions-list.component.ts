@@ -22,5 +22,8 @@ export class TransactionsListComponent implements OnInit {
     this.transactions = this.transactionService.getTransactions();
   }
 
+  onTransactionAdded(transaction:Transaction){
+    this.transactions.push(transaction);
+  }
 
 }

@@ -18,4 +18,8 @@ return this.transactions.slice();
 // splice returns a new array
 }
 
+addTransaction(transaction:Transaction){
+    this.transactions.push(transaction);
+}
+
 }
