@@ -13,6 +13,14 @@ export class AppComponent {
   onNavigate(overlay: string){
     this.loadedOverlay = overlay;
   }
+
+
+
+  // private _opened: boolean = false;
+
+  // private _toggleSidebar() {
+  //   this._opened = !this._opened;
+  // }
   
 }
 

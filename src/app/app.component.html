@@ -1,4 +1,8 @@
+<!-- <ng-sidebar-container> -->
+<!-- <ng-sidebar-content> -->
 <div class="container">
+
+
     <app-header (featureSelected)="onNavigate($event)"></app-header>
     <!-- event method from header component -->
     <div class="row">
@@ -17,9 +21,13 @@
         <app-overlay-exp *ngIf="loadedOverlay === 'expense'"></app-overlay-exp>
         <!-- expense is a keyword coming from header html -->
     </div>
+    <!-- <ng-sidebar [(opened)]="_opened"> -->
     <div class="row">
         <app-overlay-inc *ngIf="loadedOverlay !== 'expense'"></app-overlay-inc>
     </div>
-    <!-- if its not expenses overlay,switches to income overlay -->
-
+    <!-- </ng-sidebar> -->
 </div>
+
+<!-- if its not expenses overlay,switches to income overlay -->
+<!-- </ng-sidebar-content> -->
+<!-- </ng-sidebar-container> -->

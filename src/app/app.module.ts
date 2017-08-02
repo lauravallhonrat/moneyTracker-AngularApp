@@ -19,6 +19,8 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, MdCheckboxModule} from '@angular/material';
 
+import { SidebarModule } from 'ng-sidebar';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import {MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, 
     MdCheckboxModule,
     MdDatepickerModule,
     MdNativeDateModule,
-    MaterialModule
+    MaterialModule,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
