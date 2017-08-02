@@ -16,6 +16,9 @@ import { TransactionsPopUpComponent } from './transactions/transactions-pop-up/t
 import { DdDirective } from './dd.directive';
 import { TransactionsComponent } from './transactions/transactions.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, MdCheckboxModule} from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +38,13 @@ import { TransactionsComponent } from './transactions/transactions.component';
     TransactionsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MdButtonModule, 
+    MdCheckboxModule,
+    MdDatepickerModule,
+    MdNativeDateModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
