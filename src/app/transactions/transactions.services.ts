@@ -1,4 +1,3 @@
-
 import {Transaction} from './transactions.model';
 
 export class TransactionService {
