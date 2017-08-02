@@ -43,6 +43,16 @@
             </div>
         </div>
     </div>
+    <div>
+        <label for="contact-name">Name</label>
+        <input type="text" [(ngModel)]="emiContact.name">
+    </div>
 
+    <div *ngFor="let emilieContact of contacts">
+        <div>
+            <p>{{emilieContact.name}}</p>
+        </div>
+    </div>
+    <button (click)="addContact()">Submit New Contact</button>
 
 </div>
