@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Transaction } from "./transactions.model";
-import {TransactionService} from "./transactions.services"
+import {TransactionService} from "./transactions.service"
 
 @Component({
   selector: 'app-transactions',
@@ -11,9 +11,15 @@ import {TransactionService} from "./transactions.services"
 export class TransactionsComponent implements OnInit {
 
   selectedTransaction: Transaction;
-  constructor() { }
+  constructor(private transactionService: TransactionService) { }
 
   ngOnInit() {
+    this.transactionService.transactionSelected
+    .subscribe(
+      (transaction: Transaction) =>{
+        this.selectedTransaction = transaction;
+      }
+    );
   }
 
 }
