@@ -2,7 +2,7 @@
 <!-- <ng-sidebar-content> -->
 
 <app-header (featureSelected)="onNavigate($event)"></app-header>
-<!-- event method from header component -->
+<!-- event method from header component    [visible]="visible"-->
 
 <div class="container">
 
@@ -27,9 +27,15 @@
         <!-- expense is a keyword coming from header html -->
     </div>
     <!-- <ng-sidebar [(opened)]="_opened"> -->
-    <div class="row">
-        <app-overlay-inc *ngIf="loadedOverlay !== 'expense'"></app-overlay-inc>
-    </div>
+
+    <md-sidenav-container class="example-container">
+        <!-- (onClick)="changeVisible()" -->
+        <md-sidenav #sidenav class="example-sidenav">
+            <div class="row">
+                <app-overlay-inc *ngIf="loadedOverlay !== 'expense'"></app-overlay-inc>
+            </div>
+        </md-sidenav>
+    </md-sidenav-container>
     <!-- </ng-sidebar> -->
 </div>
 

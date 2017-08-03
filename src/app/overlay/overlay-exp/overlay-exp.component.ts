@@ -8,8 +8,12 @@ import {MdSelectModule} from '@angular/material';
   styleUrls: ['./overlay-exp.component.css']
 })
 
+// @Input() visible;
+
 
 export class OverlayExpComponent implements OnInit {
+
+  // visible: Boolean;
 
 selectedCategory: string;
   selectedAccount: string;

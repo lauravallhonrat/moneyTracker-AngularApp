@@ -9,6 +9,15 @@ export class AppComponent {
   loadedOverlay = 'expense';
 //loads overlay expenses html
 
+// private visible: boolean = false;
+//     // when MyBComponent emits event change visible value (which is then passed to MyAComponent)
+//     changeVisible() {
+//     if (this.visible === false) {
+//     this.visible = true;
+//     } else {
+//         this.visible = false;
+//         }      
+//     }
 
   onNavigate(overlay: string){
     this.loadedOverlay = overlay;
