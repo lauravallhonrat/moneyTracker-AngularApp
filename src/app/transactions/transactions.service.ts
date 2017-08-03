@@ -1,5 +1,7 @@
 import {Transaction} from './transactions.model';
-import {EventEmitter,Injectable} from '@angular/core'
+import {EventEmitter,Injectable} from '@angular/core';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TransactionService {
@@ -21,5 +23,13 @@ return this.transactions.slice();
 addTransaction(transaction:Transaction){
     this.transactions.push(transaction);
 }
+constructor(private http: Http) { }
+
+getSomeTransaction() {
+    return this.http.get('http://http://localhost:3000/transactions')
+      .map((res) => res.json());
+  }
+
+
 
 }

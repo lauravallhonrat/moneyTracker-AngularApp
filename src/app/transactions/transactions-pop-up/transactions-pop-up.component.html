@@ -1,10 +1,12 @@
 <div class="row">
+    <p>Here we display the selected transaction</p>
     <p class="list-group-item-heading">{{transaction.category}}
         <!-- calling this with item.nameofthepropfromtrans-list.comp -->
     </p>
     <p class="list-group-item-text">{{transaction.amount}}</p>
     <p class="list-group-item-text">{{transaction.date}}</p>
     <img src="{{transaction.iconPath}}" alt="" class="img-responsive" style="max-height: 30px">
+    <button type="button" class="btn">Delete that</button>
 </div>
 
 <!-- <div id="myModal" class="modal fade" role="dialog">

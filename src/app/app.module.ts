@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { Routes, RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,6 +25,11 @@ import {MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, 
 import { SidebarModule } from 'ng-sidebar';
 import{TransactionService} from './transactions/transactions.service';
 
+const appRoutes: Routes = [
+  //{ path: '', component: HomeComponent }
+  //{ path: 'users', component: UsersComponent } //localhost:4200/users
+  // path I choose and component name as well
+];
 
 @NgModule({
   declarations: [
@@ -48,9 +56,12 @@ import{TransactionService} from './transactions/transactions.service';
     MdDatepickerModule,
     MdNativeDateModule,
     MaterialModule,
-    SidebarModule.forRoot()
-  ],
-  providers: [TransactionService],
+    SidebarModule.forRoot(),
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(appRoutes)  
+],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

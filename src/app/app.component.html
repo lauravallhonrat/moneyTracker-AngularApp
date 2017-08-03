@@ -1,10 +1,15 @@
 <!-- <ng-sidebar-container> -->
 <!-- <ng-sidebar-content> -->
+
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+<!-- event method from header component -->
+
 <div class="container">
 
+    <div class="row">
+        <app-fox></app-fox>
+    </div>
 
-    <app-header (featureSelected)="onNavigate($event)"></app-header>
-    <!-- event method from header component -->
     <div class="row">
         <app-transactions></app-transactions>
     </div>

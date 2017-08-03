@@ -1,9 +1,5 @@
 <div class="row">
-    <button class="btn btn-success">New transaction</button>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <!-- add each item html on transaction items html component -->
         <app-transactions-items *ngFor="let itemEl of transactions" [transaction]="itemEl"></app-transactions-items>
         <!-- transaction is a property in the component we're placing this on (transaction-items ts file) -->
