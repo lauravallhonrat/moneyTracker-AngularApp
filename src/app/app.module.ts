@@ -27,6 +27,8 @@ import{TransactionService} from './transactions/transactions.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 const appRoutes: Routes = [
   //{ path: '', component: HomeComponent }
   //{ path: 'users', component: UsersComponent } //localhost:4200/users
@@ -65,7 +67,8 @@ const appRoutes: Routes = [
     SidebarModule.forRoot(),
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)  
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()  
 ],
   providers: [],
   bootstrap: [AppComponent]
