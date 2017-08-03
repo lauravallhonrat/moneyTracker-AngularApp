@@ -25,5 +25,8 @@ export class TransactionsListComponent implements OnInit {
       });
   }
 
+  onTransactionAdded(transaction:Transaction){
+    this.transactions.push(transaction);
+  }
 
 }

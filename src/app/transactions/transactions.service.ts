@@ -28,5 +28,19 @@ getTransactions() {
         });
 }
 
+<<<<<<< HEAD
+=======
+addTransaction(transaction:Transaction){
+    this.transactions.push(transaction);
+}
+constructor(private http: Http) { }
+
+getSomeTransaction() {
+    return this.http.get('http://http://localhost:3000/transactions')
+      .map((res) => res.json());
+  }
+
+
+>>>>>>> c4a02124af64d02629939f70cd528883e8ad3561
 
 }
