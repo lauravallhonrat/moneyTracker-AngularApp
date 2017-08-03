@@ -3,41 +3,35 @@
     <div class="form-group">
 
         <div class="col-sm-3">
-            <label for="amount">Amount</label>
-            <input type="number" id="amount" class="form-control">
-        </div>
-
-        <div class="col-sm-3">
-            <div class="dropdown" appDrop>
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-sm-3">
-
             <md-input-container>
-                <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+                <input type="number" mdInput placeholder="Amount" value="">
+            </md-input-container>
+        </div>
+
+        <div class="col-sm-3">
+            <md-select placeholder="Which Category" [(ngModel)]="selectedCategory" name="category">
+                <md-option *ngFor="let category of categories" [value]="category.value">
+                    {{category.viewValue}}
+                </md-option>
+            </md-select>
+        </div>
+
+        <div class="col-sm-3">
+            <md-input-container>
+                <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" mdDatepicker [value]="today">
                 <button mdSuffix [mdDatepickerToggle]="picker"></button>
             </md-input-container>
             <md-datepicker #picker></md-datepicker>
-
         </div>
 
         <div class="col-sm-3">
-            <div class="dropdown" appDrop>
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Account selection
-  <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">acc1</a></li>
-                    <li><a href="#">acc2</a></li>
-                    <li><a href="#">acc3</a></li>
-                </ul>
-            </div>
+            <md-select placeholder="Which Account" [(ngModel)]="selectedAccount" name="account">
+                <md-option *ngFor="let account of accounts" [value]="account.value">
+                    {{account.viewValue}}
+                </md-option>
+            </md-select>
+
+            <!-- <p> Selected value: {{selectedValue}} </p> -->
         </div>
     </div>
 </div>
@@ -47,6 +41,17 @@
 </div>
 
 
+
+
+<div class="row">
+
+
+
+</div>
+
+
+
+<!-- 
 <div class="row">
     <div class="col">
         <div ngbDropdown class="d-inline-block">
@@ -58,12 +63,54 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+
+<!-- 
+
+
+<div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+    Button dropdown <span class="caret"></span>
+  </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+        </li>
+    </ul>
 </div>
 
+<script>
+    angular.module('ui.bootstrap.demo', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+    angular.module('ui.bootstrap.demo').controller('DropdownCtrl', function($scope, $log) {
+        $scope.items = [
+            'The first choice!',
+            'And another choice for you.',
+            'but wait! A third!'
+        ];
 
+        $scope.status = {
+            isopen: false
+        };
 
+        $scope.toggled = function(open) {
+            $log.log('Dropdown is now: ', open);
+        };
 
+        $scope.toggleDropdown = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.status.isopen = !$scope.status.isopen;
+        };
 
+        $scope.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
+    });
+</script>
+ -->
 
 
 
