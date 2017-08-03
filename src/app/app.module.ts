@@ -24,12 +24,16 @@ import {MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, 
 
 import { SidebarModule } from 'ng-sidebar';
 import{TransactionService} from './transactions/transactions.service';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const appRoutes: Routes = [
   //{ path: '', component: HomeComponent }
   //{ path: 'users', component: UsersComponent } //localhost:4200/users
   // path I choose and component name as well
 ];
+
+
 
 @NgModule({
   declarations: [
@@ -46,7 +50,9 @@ const appRoutes: Routes = [
     OverlayIncComponent,
     TransactionsPopUpComponent,
     DdDirective,
-    TransactionsComponent
+    TransactionsComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

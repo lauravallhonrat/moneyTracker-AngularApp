@@ -1,11 +1,15 @@
 <div class="row">
     <p>Here we display the selected transaction</p>
-    <p class="list-group-item-heading">{{transaction.category}}
+    <h4 class="list-group-item-heading">{{transaction.category}}
         <!-- calling this with item.nameofthepropfromtrans-list.comp -->
-    </p>
+    </h4>
     <p class="list-group-item-text">{{transaction.amount}}</p>
     <p class="list-group-item-text">{{transaction.date}}</p>
-    <img src="{{transaction.icon}}" alt="" class="img-responsive" style="max-height: 30px">
+    <p class="list-group-item-text">{{transaction.account}}</p>
+
+    <pre class="list-group-item-text">{{transaction.transactionType}}</pre>
+
+    <img src="{{transaction.icon}}" alt="the image should be here :(" class="img-responsive" style="max-height: 30px">
     <button type="button" class="btn">Delete that</button>
 </div>
 
