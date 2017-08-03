@@ -18,6 +18,6 @@ export class TransactionsItemsComponent implements OnInit {
   }
   onSelected(){
     //this.transactionSelected.emit();//call emit when emitEmitter is used
-    this.transactionService.transactionSelected.emit(this.transaction);
+    //this.transactionService.getThoseTransactions.emit(this.transaction);
   }
 }

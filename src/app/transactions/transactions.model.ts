@@ -1,13 +1,21 @@
 export class Transaction {
     public category: string;
     public amount: number;
-    public iconPath: string;
+    public icon: string;
     public date: Date;
+    public transactionType: string;
+    public account: string;
 
-    constructor(category: string, amount: number, iconPath: string, date: Date) {
+    constructor(category: string, amount: number, date: Date, transactionType: string, account: string, icon: string) {
         this.category = category;
         this.amount = amount;
-        this.iconPath = iconPath;
+        this.icon = '';
         this.date = date;
+        this.transactionType = transactionType;
+        this.account = account;
+    }
+
+    getCategory(): string {
+        return this.category;
     }
 }

@@ -10,16 +10,26 @@ import {TransactionService} from "./transactions.service"
 })
 export class TransactionsComponent implements OnInit {
 
-  selectedTransaction: Transaction;
+  // getThoseTransactions: Transaction;
+  getThoseTransactions: Transaction;
   constructor(private transactionService: TransactionService) { }
 
   ngOnInit() {
-    this.transactionService.transactionSelected
-    .subscribe(
-      (transaction: Transaction) =>{
-        this.selectedTransaction = transaction;
-      }
-    );
+    // this.transactionService.transactionSelected
+    // .subscribe(
+    //   (transaction: Transaction) =>{
+    //     this.selectedTransaction = transaction;
+    //   }
+    // );
+
+    // this.transactionService.getThoseTransactions
+    // .subscribe(
+    //   (transaction: Transaction) =>{
+    //     this.getThoseTransactions = transaction;
+    //   }
+    // );
+
+    // this.transactionService.getThoseTransactions().subscribe(getThoseTransactions =>{this.getThoseTransactions = getThoseTransactions;});
   }
 
 }

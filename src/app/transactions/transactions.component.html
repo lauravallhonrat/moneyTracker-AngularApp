@@ -3,7 +3,7 @@
     <!-- transactionWasSelected comes from transaction list ts file -->
 </div>
 <div class="row">
-    <app-transactions-pop-up *ngIf="selectedTransaction; else infoText" [transaction]="selectedTransaction"></app-transactions-pop-up>
+    <app-transactions-pop-up *ngIf="getThoseTransactions; else infoText" [transaction]="selectedTransaction"></app-transactions-pop-up>
     <ng-template #infoText>
         <p>This is the pop-up's else text. Should appear only if nothing is selected in the transaction list</p>
     </ng-template>
