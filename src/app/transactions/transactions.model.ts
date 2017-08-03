@@ -9,7 +9,7 @@ export class Transaction {
     constructor(category: string, amount: number, date: Date, transactionType: string, account: string, icon: string) {
         this.category = category;
         this.amount = amount;
-        this.icon = '';
+        this.icon = icon;
         this.date = date;
         this.transactionType = transactionType;
         this.account = account;
