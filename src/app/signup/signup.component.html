@@ -4,30 +4,27 @@
     </div>
 </div>
 
-
-
 <div class="zen">
     <img src="" alt="the fox here">
 </div>
 
 <div class="login">
     <div class="logbox">
-        <form action="/signup" method="POST">
+        <form (ngSubmit)="submitLogin()" #myForm="ngForm">
             <div class="form-group">
-                <label for="usernameInput">Your email address</label>
-                <input type="email" class="form-control" id="username" placeholder="someonecool@email.com" name="username">
+                <label for="InputUsername">username</label>
+                <input type="email" class="form-control" id="InputUsername" placeholder="username" [(ngModel)]="user.username" name="username">
             </div>
             <div class="form-group">
-                <label for="passwordInput">Choose a password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                <label for="InputPassword">Password</label>
+                <input type="password" class="form-control" id="InputPassword" placeholder="Password" [(ngModel)]="user.password" name="password">
             </div>
-
-            <button type="submit" class="btn butts2 btn-block">CREATE ACCOUNT</button>
+            <div *ngIf="error" class="alert alert-danger" role="alert">{{ error.statusText }}</div>
+            <button type="submit" class="btn btn-default btn-primary">Login</button>
         </form>
-        <p class="account-message">
-            You already have an account? <a href="/signup">Welcome back, login</a>
+        <p class="account-message" *ngIf="!this.session.isAuth">
+            You already have an account? <a [routerLink]="['/login']">Login</a>
         </p>
 
     </div>
-
 </div>

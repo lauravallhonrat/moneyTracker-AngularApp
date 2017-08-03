@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { SessionService } from './session.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -6,6 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+ constructor(
+  	private session: SessionService,
+  	private router: Router,
+  ) { }
+ 
+ 
+ //this for navigation expenses/income
   loadedOverlay = 'expense';
 //loads overlay expenses html
 
