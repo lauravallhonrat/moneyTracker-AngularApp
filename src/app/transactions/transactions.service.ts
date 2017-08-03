@@ -28,8 +28,6 @@ getTransactions() {
         });
 }
 
-<<<<<<< HEAD
-=======
 addTransaction(transaction:Transaction){
     this.transactions.push(transaction);
 }
@@ -41,6 +39,5 @@ getSomeTransaction() {
   }
 
 
->>>>>>> c4a02124af64d02629939f70cd528883e8ad3561
 
 }
