@@ -23,8 +23,8 @@ getTransactions() {
     return this.http.get('http://localhost:3000/transactions')
         .map((response) => {
             return (<any>response.json()).map(item => {
-                return new Transaction(item.category, item.amount, item.date, item.icon,item.account,item.transactionType);
-            });
+                return new Transaction(item.category, item.amount, item.date,item.account,item.transactionType, item.icon);
+            }); // ORDER MATTERS
         });
 }
 
