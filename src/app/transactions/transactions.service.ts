@@ -28,15 +28,14 @@ getTransactions() {
         });
 }
 
-addTransaction(transaction:Transaction){
-    this.transactions.push(transaction);
-}
-constructor(private http: Http) { }
+// addTransaction(transaction:Transaction){
+//     this.transactions.push(transaction);
+// }
 
-getSomeTransaction() {
-    return this.http.get('http://http://localhost:3000/transactions')
-      .map((res) => res.json());
-  }
+// getSomeTransaction() {
+//     return this.http.get('http://http://localhost:3000/transactions')
+//       .map((res) => res.json());
+//   }
 
 
 
