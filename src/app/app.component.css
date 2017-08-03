@@ -1,0 +1,35 @@
+.banner {
+    position: relative;
+    width: 100vw;
+    height: 130px;
+    margin-bottom: 40px;
+    background-color: royalblue;
+    background: linear-gradient(to bottom right, #BF186F, #39C9DF);
+    display: flex;
+    justify-content: center;
+}
+
+.balance {
+    display: flex;
+    text-align: center;
+    color: #fff;
+    flex-direction: column;
+}
+
+h3,
+h1 {
+    margin: 0;
+}
+
+h1 {
+    padding: 10px 0 0 0;
+}
+
+h3 {
+    padding: 20px 0 0 0;
+}
+
+.button-wrap {
+    position: absolute;
+    margin-top: 110px;
+}

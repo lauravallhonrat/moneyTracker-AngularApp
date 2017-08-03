@@ -1,7 +1,27 @@
 <!-- <ng-sidebar-container> -->
 <!-- <ng-sidebar-content> -->
 
-<app-header (featureSelected)="onNavigate($event)"></app-header>
+<!-- <app-header (featureSelected)="onNavigate($event)"></app-header> -->
+<div class="banner">
+
+    <div class="balance">
+        <h3>BALANCE</h3>
+        <h1>BALANCE.VALUE</h1>
+    </div>
+
+    <div class="button-wrap example-sidenav-content">
+        <button type="submit" class="btn" (click)="showExpense()">EXPENSE</button>
+
+
+        <!-- (click)="onSelect( 'expense') " -->
+
+        <!-- (click)="onSelect( 'expense') " -->
+        <!-- expense keyword used in app component for navigation -->
+
+        <button type="submit " class="btn " (click)="onSelect( 'income') ">INCOME</button>
+    </div>
+
+</div>
 <!-- event method from header component    [visible]="visible"-->
 
 <div class="container">

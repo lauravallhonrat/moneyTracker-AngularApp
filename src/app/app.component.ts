@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,OnInit, EventEmitter,Output } from '@angular/core';
+import {MdSidenavModule} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   loadedOverlay = 'expense';
 //loads overlay expenses html
+
+@Output() featureSelected = new EventEmitter<string>();
+
+onSelect(feature : string){
+      this.featureSelected.emit(feature);
+    }
 
 // private visible: boolean = false;
 //     // when MyBComponent emits event change visible value (which is then passed to MyAComponent)
