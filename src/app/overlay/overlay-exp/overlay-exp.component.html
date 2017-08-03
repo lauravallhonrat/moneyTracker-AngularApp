@@ -1,14 +1,15 @@
 <div class="row">
     <p>EXPENSES</p>
     <div class="form-group">
-        <div class="col-sm-6">
+
+        <div class="col-sm-3">
             <label for="amount">Amount</label>
             <input type="number" id="amount" class="form-control">
         </div>
-        <div class="col-sm-6">
+
+        <div class="col-sm-3">
             <div class="dropdown" appDrop>
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-  <span class="caret"></span></button>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="#">HTML</a></li>
                     <li><a href="#">CSS</a></li>
@@ -16,12 +17,9 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="container">
-                <div class="row">
-                    <div class='col-sm-6'>
-                        <div class="form-group">
-                            <!-- <div class='input-group date' id='datetimepicker1'>
+
+        <div class="col-sm-3">
+            <!-- <div class='input-group date' id='datetimepicker1'>
                                 <input type='text' class="form-control" />
                                 <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
@@ -32,34 +30,28 @@
                     <script type="text/javascript">
                         $(function() {
                             $('#datetimepicker1').datetimepicker();
-                        });
-                    </script> -->
+                        });                    </script> -->
+            <md-input-container>
+                <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+                <button mdSuffix [mdDatepickerToggle]="picker"></button>
+            </md-input-container>
+            <md-datepicker #picker></md-datepicker>
+        </div>
 
-
-
-                            <md-input-container>
-                                <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-                                <button mdSuffix [mdDatepickerToggle]="picker"></button>
-                            </md-input-container>
-                            <md-datepicker #picker></md-datepicker>
-
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="dropdown" appDrop>
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Account selection
+        <div class="col-sm-3">
+            <div class="dropdown" appDrop>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Account selection
   <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">acc1</a></li>
-                            <li><a href="#">acc2</a></li>
-                            <li><a href="#">acc3</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="btn">CANCEL</button>
-                <button class="btn" type="submit">ADD THIS</button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">acc1</a></li>
+                    <li><a href="#">acc2</a></li>
+                    <li><a href="#">acc3</a></li>
+                </ul>
             </div>
         </div>
+    </div>
+</div>
+<div class="row">
+    <button class="btn">CANCEL</button>
+    <button class="btn" type="submit">ADD THIS</button>
+</div>

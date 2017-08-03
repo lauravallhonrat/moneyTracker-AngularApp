@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Routes, RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,6 +24,11 @@ import {MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, 
 
 import { SidebarModule } from 'ng-sidebar';
 
+const appRoutes: Routes = [
+  //{ path: '', component: HomeComponent }
+  //{ path: 'users', component: UsersComponent } //localhost:4200/users
+  // path I choose and component name as well
+];
 
 @NgModule({
   declarations: [
@@ -51,8 +57,9 @@ import { SidebarModule } from 'ng-sidebar';
     MaterialModule,
     SidebarModule.forRoot(),
     FormsModule,
-    HttpModule
-  ],
+    HttpModule,
+    RouterModule.forRoot(appRoutes)  
+],
   providers: [],
   bootstrap: [AppComponent]
 })
