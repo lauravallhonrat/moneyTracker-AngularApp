@@ -19,6 +19,7 @@ export class AppComponent {
 
   onHide() {
     this.overlayIncIsHidden = true;
+    this.overlayIsHidden = true;
   }
 
   // ======= THE TOGGLING ======== // 

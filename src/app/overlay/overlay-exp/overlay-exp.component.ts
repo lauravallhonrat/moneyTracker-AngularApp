@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {MdSelectModule} from '@angular/material';
 
 
@@ -17,6 +17,24 @@ export class OverlayExpComponent implements OnInit {
   public selectedAmount: any;
   public selectedDate: any;
   today = new Date();
+
+    toggleVar: false;
+  @Output() hide = new EventEmitter<boolean>();
+
+  close_classExp() {
+    this.hide.emit(this.toggleVar);
+  }
+
+  submitForm(myForm) {
+    console.log(myForm);
+    setTimeout(function() {
+      this.selectedAmount = "";
+    }, 500);
+    this.close_classExp();
+  }
+
+
+  // ====== DATA ====== //
 
   accounts = [
     {value: 'main-0', viewValue: 'Main'},
