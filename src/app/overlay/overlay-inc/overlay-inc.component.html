@@ -1,43 +1,49 @@
 <div [className]="'income-block'">
     <!-- *ngIf="visible" -->
     <p>INCOME</p>
+
     <div class="form-group">
 
-        <div class="col-sm-3">
-            <md-input-container>
-                <input type="number" mdInput placeholder="Amount" value="">
-            </md-input-container>
-        </div>
+        <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
 
-        <div class="col-sm-3">
-            <md-select placeholder="Which Category" [(ngModel)]="selectedCategory" name="category">
-                <md-option *ngFor="let category of categories" [value]="category.value">
-                    {{category.viewValue}}
-                </md-option>
-            </md-select>
-        </div>
+            <div class="col-sm-3">
+                <md-input-container>
+                    <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
+                </md-input-container>
+            </div>
 
-        <div class="col-sm-3">
-            <md-input-container>
-                <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" mdDatepicker [value]="today">
-                <button mdSuffix [mdDatepickerToggle]="picker"></button>
-            </md-input-container>
-            <md-datepicker #picker></md-datepicker>
-        </div>
+            <div class="col-sm-3">
+                <md-select placeholder="Which Category" [(ngModel)]="selectedCategory" name="category" required>
+                    <md-option *ngFor="let category of categories" [value]="category.value">
+                        {{category.viewValue}}
+                    </md-option>
+                </md-select>
+            </div>
 
-        <div class="col-sm-3">
-            <md-select placeholder="Which Account" [(ngModel)]="selectedAccount" name="account">
-                <md-option *ngFor="let account of accounts" [value]="account.value">
-                    {{account.viewValue}}
-                </md-option>
-            </md-select>
+            <div class="col-sm-3">
+                <md-input-container>
+                    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" mdDatepicker [value]="today">
+                    <button mdSuffix [mdDatepickerToggle]="picker" [(ngModel)]="selectedDate" name="date" ngDefaultControl></button>
+                </md-input-container>
+                <md-datepicker #picker></md-datepicker>
+            </div>
 
-            <!-- <p> Selected value: {{selectedValue}} </p> -->
-        </div>
-        <div class="row">
-            <button class="btn">CANCEL</button>
-            <button class="btn" type="submit">ADD THIS</button>
-        </div>
+            <div class="col-sm-3">
+                <md-select placeholder="Which Account" [(ngModel)]="selectedAccount" name="account">
+                    <md-option *ngFor="let account of accounts" [value]="account.value">
+                        {{account.viewValue}}
+                    </md-option>
+                </md-select>
+
+                <!-- <p> Selected value: {{selectedValue}} </p> -->
+            </div>
+            <div class="row">
+                <button class="btn" (click)="close_classInc()">CANCEL</button>
+                <button class="btn" type="submit">ADD THIS</button>
+            </div>
+
+        </form>
+
     </div>
 </div>
 <div *ngFor="let emilieContact of contacts">

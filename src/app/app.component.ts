@@ -17,6 +17,10 @@ export class AppComponent {
   //   this.loadedOverlay = overlay;
   // }
 
+  onHide() {
+    this.overlayIncIsHidden = true;
+  }
+
   // ======= THE TOGGLING ======== // 
 
   overlayIsHidden = true;
@@ -27,6 +31,7 @@ export class AppComponent {
 
   toggle_class(){
     this.overlayIsHidden = !this.overlayIsHidden;
+    this.overlayIncIsHidden = true;
   }
 
   loadedOverlayInc = 'income';
@@ -34,8 +39,11 @@ export class AppComponent {
 
   toggle_classInc(){
     this.overlayIncIsHidden = !this.overlayIncIsHidden;
+    this.overlayIsHidden = true;
   }
 
 
 }
+
+export default AppComponent;
 

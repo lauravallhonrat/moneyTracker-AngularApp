@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, Directive,HostBinding, Output, Input, EventEmitter } from '@angular/core';
 import contactList from './contacts';
+import AppComponent from '../../app.component'
 
 @Component({
   selector: 'app-overlay-inc',
@@ -11,7 +12,19 @@ export class OverlayIncComponent implements OnInit {
   contacts: Object[];
   emiContact: Object = {};
 
-  constructor() { }
+  toggleVar: false;
+  @Output() hide = new EventEmitter<boolean>();
+
+  submitForm(myForm) {
+    console.log(myForm);
+  }
+
+  close_classInc() {
+    this.hide.emit(this.toggleVar);
+  }
+
+
+  // constructor (@Host() app: AppComponent) {}
 
   ngOnInit() {
     this.contacts = contactList;
@@ -27,8 +40,10 @@ export class OverlayIncComponent implements OnInit {
 
 // ====== DATA ====== //
 
-    selectedCategory: string;
-  selectedAccount: string;
+  public selectedCategory: string;
+  public selectedAccount: string;
+  public selectedAmount: any;
+  public selectedDate: any;
   today = new Date();
 
   accounts = [

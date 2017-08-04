@@ -12,10 +12,10 @@ import {MdSelectModule} from '@angular/material';
 
 export class OverlayExpComponent implements OnInit {
 
-  // visible: Boolean;
-
-  selectedCategory: string;
-  selectedAccount: string;
+  public selectedCategory: string;
+  public selectedAccount: string;
+  public selectedAmount: any;
+  public selectedDate: any;
   today = new Date();
 
   accounts = [

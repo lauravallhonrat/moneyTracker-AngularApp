@@ -40,7 +40,7 @@
 
         <!-- expense is a keyword coming from header html -->
 
-        <app-overlay-inc [hidden]="overlayIncIsHidden"></app-overlay-inc>
+        <app-overlay-inc (hide)='onHide($event)' [hidden]="overlayIncIsHidden"></app-overlay-inc>
 
     </div>
 
