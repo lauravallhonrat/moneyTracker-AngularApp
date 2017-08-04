@@ -33,6 +33,8 @@ implements OnInit {
 
   submitForm(myForm: NgForm) {
     console.log("Received form", myForm.value.selectedDate);
+    console.log(myForm);
+    
     // process form submitting
     myForm.reset();
     // close form modal
@@ -45,13 +47,13 @@ implements OnInit {
     this.selectedDate = new Date();
   }
 
-  addContact(){
-    // console.log("Add contact has been called");
-    // add contact to contacts list
-    this.contacts.push(this.emiContact);
-    // clear inputs
-    this.emiContact= {}; // creating a new object
-  }
+  // addContact(){
+  //   // console.log("Add contact has been called");
+  //   // add contact to contacts list
+  //   this.contacts.push(this.emiContact);
+  //   // clear inputs
+  //   this.emiContact= {}; // creating a new object
+  // }
 
 // ====== DATA ====== //
 

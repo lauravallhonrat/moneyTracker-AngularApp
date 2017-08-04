@@ -8,19 +8,3 @@
         <p>This is the pop-up's else text. Should appear only if nothing is selected in the transaction list</p>
     </ng-template>
 </div>
-<div class="row">
-    <app-budgets-list></app-budgets-list>
-</div>
-
-<div class="row">
-    <app-charts-list></app-charts-list>
-</div>
-<div class="row">
-    assign loaded overlay event to expense in app component
-    <app-overlay-exp *ngIf="loadedOverlay === 'expense'"></app-overlay-exp>
-    <!-- expense is a keyword coming from header html -->
-</div>
-
-<div class="row">
-    <app-overlay-inc *ngIf="loadedOverlay !== 'expense'"></app-overlay-inc>
-</div>
