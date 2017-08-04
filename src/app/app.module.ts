@@ -27,13 +27,14 @@ import { SignupComponent } from './signup/signup.component';
 //services
 import{TransactionService} from './transactions/transactions.service';
 import { SessionService } from './session.service';
+import { HomeComponent } from './home/home.component';
 
 
 const appRoutes: Routes = [
   { path: 'login',  component: LoginComponent },
   { path: 'signup',  component: SignupComponent },
-  { path: ' ',  component: TransactionsComponent, canActivate: [SessionService] },
-  { path: 'transactions',  component: TransactionsListComponent, canActivate: [SessionService] },
+  { path: ' ',  component: TransactionsComponent },
+  { path: 'transactions',  component: TransactionsListComponent },
   // { path: 'phones/new',  component: AddPhoneComponent, canActivate: [SessionService] },
   // { path: 'phones/:id', component: PhonesDetailsComponent, canActivate: [SessionService] }
 ];
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
     DdDirective,
     TransactionsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
