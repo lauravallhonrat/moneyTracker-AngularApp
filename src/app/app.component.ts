@@ -1,4 +1,4 @@
-import { Component,OnInit, EventEmitter,Output } from '@angular/core';
+import { Component,OnInit, EventEmitter,Output, Input } from '@angular/core';
 import {MdSidenavModule} from '@angular/material';
 
 @Component({
@@ -7,36 +7,28 @@ import {MdSidenavModule} from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  @Output() featureSelected = new EventEmitter<string>();
+
+  onSelect(feature : string){
+    this.featureSelected.emit(feature);
+  }
+  // onNavigate(overlay: string){
+  //   this.loadedOverlay = overlay;
+  // }
+
+  // ======= THE TOGGLING ======== // 
+
+  overlayIsHidden = true;
+  overlayIncIsHidden = true;
+
   loadedOverlay = 'expense';
-//loads overlay expenses html
+  //loads overlay expenses html - PAS EFFACER
 
-@Output() featureSelected = new EventEmitter<string>();
-
-onSelect(feature : string){
-      this.featureSelected.emit(feature);
-    }
-
-// private visible: boolean = false;
-//     // when MyBComponent emits event change visible value (which is then passed to MyAComponent)
-//     changeVisible() {
-//     if (this.visible === false) {
-//     this.visible = true;
-//     } else {
-//         this.visible = false;
-//         }      
-//     }
-
-  onNavigate(overlay: string){
-    this.loadedOverlay = overlay;
+  toggle_class(){
+    this.overlayIsHidden = !this.overlayIsHidden;
   }
 
 
-
-  // private _opened: boolean = false;
-
-  // private _toggleSidebar() {
-  //   this._opened = !this._opened;
-  // }
-  
 }
 

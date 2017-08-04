@@ -1,0 +1,9 @@
+.income-block {
+    background-color: paleturquoise;
+    padding: 20px;
+    width: 100vw;
+    position: fixed;
+    bottom: -20px;
+    left: 0px;
+    height: 50vh;
+}

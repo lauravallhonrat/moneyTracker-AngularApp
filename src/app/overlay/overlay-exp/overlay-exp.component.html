@@ -1,4 +1,4 @@
-<div class="row expense-block">
+<div [className]="'expense-block'">
     <!-- *ngIf="visible" -->
     <p>EXPENSES</p>
     <div class="form-group">
@@ -34,21 +34,15 @@
 
             <!-- <p> Selected value: {{selectedValue}} </p> -->
         </div>
+        <div class="row">
+            <button class="btn">CANCEL</button>
+            <button class="btn" type="submit">ADD THIS</button>
+        </div>
     </div>
 </div>
-<div class="row">
-    <button class="btn">CANCEL</button>
-    <button class="btn" type="submit">ADD THIS</button>
-</div>
 
 
 
-
-<div class="row">
-
-
-
-</div>
 
 
 

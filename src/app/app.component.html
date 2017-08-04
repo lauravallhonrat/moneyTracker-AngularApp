@@ -1,7 +1,3 @@
-<!-- <ng-sidebar-container> -->
-<!-- <ng-sidebar-content> -->
-
-<!-- <app-header (featureSelected)="onNavigate($event)"></app-header> -->
 <div class="banner">
 
     <div class="balance">
@@ -10,19 +6,12 @@
     </div>
 
     <div class="button-wrap example-sidenav-content">
-        <button type="submit" class="btn" (click)="showExpense()">EXPENSE</button>
+        <button type="submit" class="btn" (click)="toggle_class()">EXPENSE</button>
 
-
-        <!-- (click)="onSelect( 'expense') " -->
-
-        <!-- (click)="onSelect( 'expense') " -->
-        <!-- expense keyword used in app component for navigation -->
-
-        <button type="submit " class="btn " (click)="onSelect( 'income') ">INCOME</button>
+        <button type="submit " class="btn " (click)="toggle_class()">INCOME</button>
     </div>
 
 </div>
-<!-- event method from header component    [visible]="visible"-->
 
 <div class="container">
 
@@ -43,22 +32,13 @@
     </div>
     <div class="row">
         <!-- assign loaded overlay event to expense in app component -->
-        <app-overlay-exp *ngIf="loadedOverlay === 'expense'"></app-overlay-exp>
+
+        <app-overlay-exp [hidden]="overlayIsHidden"></app-overlay-exp>
+
         <!-- expense is a keyword coming from header html -->
+
+        <app-overlay-inc [hidden]="overlayIncIsHidden"></app-overlay-inc>
+
     </div>
-    <!-- <ng-sidebar [(opened)]="_opened"> -->
 
-    <md-sidenav-container class="example-container">
-        <!-- (onClick)="changeVisible()" -->
-        <md-sidenav #sidenav class="example-sidenav">
-            <div class="row">
-                <app-overlay-inc *ngIf="loadedOverlay !== 'expense'"></app-overlay-inc>
-            </div>
-        </md-sidenav>
-    </md-sidenav-container>
-    <!-- </ng-sidebar> -->
 </div>
-
-<!-- if its not expenses overlay,switches to income overlay -->
-<!-- </ng-sidebar-content> -->
-<!-- </ng-sidebar-container> -->

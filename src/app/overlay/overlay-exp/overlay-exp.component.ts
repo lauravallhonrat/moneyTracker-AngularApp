@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import {MdSelectModule} from '@angular/material';
 
 
@@ -10,12 +10,11 @@ import {MdSelectModule} from '@angular/material';
 
 // @Input() visible;
 
-
 export class OverlayExpComponent implements OnInit {
 
   // visible: Boolean;
 
-selectedCategory: string;
+  selectedCategory: string;
   selectedAccount: string;
   today = new Date();
 

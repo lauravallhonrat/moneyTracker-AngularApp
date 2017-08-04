@@ -1,3 +1,13 @@
-.row {
-    background-color: aliceblue;
+.expense-block {
+    background-color: pink;
+    padding: 20px;
+    width: 100vw;
+    position: fixed;
+    bottom: -20px;
+    left: 0px;
+    height: 50vh;
+}
+
+.hide {
+    display: none;
 }
