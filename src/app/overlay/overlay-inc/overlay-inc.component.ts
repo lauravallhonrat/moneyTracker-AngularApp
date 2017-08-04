@@ -15,14 +15,13 @@ export class OverlayIncComponent implements OnInit {
   toggleVar: false;
   @Output() hide = new EventEmitter<boolean>();
 
-  submitForm(myForm) {
-    console.log(myForm);
-  }
-
   close_classInc() {
     this.hide.emit(this.toggleVar);
   }
 
+  submitForm(myForm) {
+    console.log(myForm);
+  }
 
   // constructor (@Host() app: AppComponent) {}
 
