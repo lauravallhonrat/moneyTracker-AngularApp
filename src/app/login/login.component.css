@@ -3,16 +3,20 @@ html {
     min-height: 800px;
 }
 
-.mainbox {
-    background: linear-gradient(135deg, #179a6c) 0%, #aed86d no-repeat;
+body {
     height: 100%;
-    color: #fff;
-    margin: 0;
-    padding: 0;
+    margin-top: -20px;
 }
 
-.container {
+.mainbox {
+    /* background: linear-gradient(135deg, #179a6c) 0%, #aed86d no-repeat; */
+    background: linear-gradient(to bottom right, rgba(23, 154, 108, 1), rgba(174, 215, 109, 1)) no-repeat;
     height: 100vh;
+    color: #fff;
+    min-height: 800px;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
 }
 
 .butts2 {
@@ -21,6 +25,12 @@ html {
     padding: 10px;
     border-radius: 4px;
     flex-shrink: 0;
+    width: 100%;
+}
+
+.center-that {
+    display: flex;
+    justify-content: center;
 }
 
 .logbox {
@@ -32,7 +42,7 @@ html {
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .account-message,
@@ -87,6 +97,8 @@ img {
 
 .login {
     padding-top: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .bubblebox {
@@ -111,6 +123,7 @@ img {
     color: #333;
     font-family: "Handlee", sans-serif;
     font-size: 1.3em;
+    margin-bottom: 20px;
 }
 
 .bubble>p {
@@ -143,12 +156,16 @@ form>.alert {
         transform: translateY(0px);
         opacity: 1;
     }
-    50% {
-        transform: translateY(+5px);
+    63% {
+        transform: translateY(0px);
         opacity: 1;
     }
-    70% {
-        transform: translateY(-5px);
+    65% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    68% {
+        transform: translateY(0px);
         opacity: 1;
     }
     100% {
@@ -160,5 +177,5 @@ form>.alert {
 .fox {
     display: flex;
     justify-content: center;
-    animation: floating 7s infinite;
+    animation: floating 5s infinite;
 }
