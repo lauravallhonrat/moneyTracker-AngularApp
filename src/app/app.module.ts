@@ -2,10 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { SidebarModule } from 'ng-sidebar';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, MdCheckboxModule } from '@angular/material';
 import {MdSidenavModule} from '@angular/material';
-
-
+//components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TransactionsListComponent } from './transactions/transactions-list/transactions-list.component';
@@ -20,23 +23,25 @@ import { OverlayIncComponent } from './overlay/overlay-inc/overlay-inc.component
 import { TransactionsPopUpComponent } from './transactions/transactions-pop-up/transactions-pop-up.component';
 import { DdDirective } from './dd.directive';
 import { TransactionsComponent } from './transactions/transactions.component';
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, MdCheckboxModule} from '@angular/material';
-
-import { SidebarModule } from 'ng-sidebar';
-import{TransactionService} from './transactions/transactions.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { HomeComponent } from './home/home.component';
+//services
+import { TransactionService } from './transactions/transactions.service';
+import { SessionService } from './session.service';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 const appRoutes: Routes = [
-  //{ path: '', component: HomeComponent }
-  //{ path: 'users', component: UsersComponent } //localhost:4200/users
-  // path I choose and component name as well
-];
+  { path: '', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'transactions', component: HomeComponent, canActivate: [SessionService]},
+  { path: '**', redirectTo: '' },
 
+  //{ path: 'transactions',  component: TransactionsListComponent },
+  // { path: 'phones/new',  component: AddPhoneComponent, canActivate: [SessionService] },
+  // { path: 'phones/:id', component: PhonesDetailsComponent, canActivate: [SessionService] }
+];
 
 
 @NgModule({
@@ -56,12 +61,13 @@ const appRoutes: Routes = [
     DdDirective,
     TransactionsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdButtonModule, 
+    MdButtonModule,
     MdCheckboxModule,
     MdDatepickerModule,
     MdNativeDateModule,
@@ -70,12 +76,10 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule.forRoot() ,
+    NgbModule.forRoot(),
     MdSidenavModule
-
- 
-],
-  providers: [],
+  ],
+  providers: [SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
