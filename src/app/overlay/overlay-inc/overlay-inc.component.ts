@@ -34,10 +34,7 @@ implements OnInit {
   submitForm(myForm: NgForm) {
     console.log("Received form", myForm.value.selectedDate);
     console.log(myForm);
-<<<<<<< HEAD
-=======
     
->>>>>>> 42afc501c45b29ae6adf734ff7904137219c7738
     // process form submitting
     myForm.reset();
     // close form modal

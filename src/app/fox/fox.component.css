@@ -1,0 +1,32 @@
+img {
+    height: 100px;
+}
+
+.bubblebox {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.bubblebox2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.bubble {
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    color: #333;
+    font-family: "Handlee", sans-serif;
+    font-size: 1.3em;
+}
+
+.bubble>p {
+    margin-bottom: 0;
+    text-align: center;
+}
