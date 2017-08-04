@@ -1,0 +1,23 @@
+.income-block {
+    background-color: paleturquoise;
+    padding: 20px;
+    width: 100vw;
+    position: fixed;
+    bottom: -20px;
+    left: 0px;
+    height: 50vh;
+    animation-name: comeHither;
+    animation-duration: 0.8s;
+}
+
+
+/* The animation code */
+
+@keyframes comeHither {
+    from {
+        transform: translateY(50vh);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}

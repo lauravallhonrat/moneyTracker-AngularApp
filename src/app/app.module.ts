@@ -7,6 +7,7 @@ import { SidebarModule } from 'ng-sidebar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, MdCheckboxModule } from '@angular/material';
+import {MdSidenavModule} from '@angular/material';
 //components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MdSidenavModule
   ],
   providers: [SessionService],
   bootstrap: [AppComponent]

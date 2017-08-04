@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit, EventEmitter,Output, Input } from '@angular/core';
 import { SessionService } from '../session.service';
 import { Router } from '@angular/router';
 
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  @Output() featureSelected = new EventEmitter<string>();
 constructor(
   	private session: SessionService,
   	private router: Router,
@@ -26,6 +27,37 @@ constructor(
   }
   logout(){
     this.session.logout();
+  }
+
+  onSelect(feature : string){
+    this.featureSelected.emit(feature);
+  }
+  // onNavigate(overlay: string){
+  //   this.loadedOverlay = overlay;
+  // }
+
+  onHide() {
+    this.overlayIncIsHidden = true;
+    this.overlayIsHidden = true;
+  }
+
+  // ======= THE TOGGLING ======== // 
+
+  overlayIsHidden = true;
+  overlayIncIsHidden = true;
+  //loads overlay expenses html - PAS EFFACER
+
+  toggle_class(){
+    this.overlayIsHidden = !this.overlayIsHidden;
+    this.overlayIncIsHidden = true;
+  }
+
+  loadedOverlayInc = 'income';
+  //loads overlay inc html - PAS EFFACER
+
+  toggle_classInc(){
+    this.overlayIncIsHidden = !this.overlayIncIsHidden;
+    this.overlayIsHidden = true;
   }
 
 }

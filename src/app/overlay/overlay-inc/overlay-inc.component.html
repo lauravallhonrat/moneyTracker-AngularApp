@@ -1,58 +1,54 @@
-<div class="row">
+<div [className]="'income-block'">
+    <!-- *ngIf="visible" -->
     <p>INCOME</p>
+
     <div class="form-group">
-        <div class="col-sm-6">
-            <label for="amount">Amount</label>
-            <input type="number" id="amount" class="form-control">
-        </div>
-        <div class="col-sm-6">
-            <div class="dropdown" appDrop>
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                </ul>
+
+        <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+
+            <div class="col-sm-3">
+                <md-input-container>
+                    <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
+                </md-input-container>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="container">
-                <div class="row">
 
-                    <div class="form-group">
-                        <md-input-container>
-                            <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-                            <button mdSuffix [mdDatepickerToggle]="picker"></button>
-                        </md-input-container>
-                        <md-datepicker #picker></md-datepicker>
-                    </div>
+            <div class="col-sm-3">
+                <md-select placeholder="Which Category" [(ngModel)]="selectedCategory" name="category" required>
+                    <md-option *ngFor="let category of categories" [value]="category.value">
+                        {{category.viewValue}}
+                    </md-option>
+                </md-select>
+            </div>
 
-                </div>
-                <div class="col-sm-6">
-                    <div class="dropdown" appDrop>
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Account selection<span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">acc1</a></li>
-                            <li><a href="#">acc2</a></li>
-                            <li><a href="#">acc3</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="btn">CANCEL</button>
+            <div class="col-sm-3">
+                <md-input-container>
+                    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" mdDatepicker name="selectedDate" [(ngModel)]="selectedDate">
+                    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                </md-input-container>
+                <md-datepicker #picker></md-datepicker>
+            </div>
+
+            <div class="col-sm-3">
+                <md-select placeholder="Which Account" [(ngModel)]="selectedAccount" name="account">
+                    <md-option *ngFor="let account of accounts" [value]="account.value">
+                        {{account.viewValue}}
+                    </md-option>
+                </md-select>
+
+                <!-- <p> Selected value: {{selectedValue}} </p> -->
+            </div>
+            <div class="row">
+                <button class="btn" (click)="close_classInc()">CANCEL</button>
                 <button class="btn" type="submit">ADD THIS</button>
             </div>
-        </div>
-    </div>
-    <div>
-        <label for="contact-name">Name</label>
-        <input type="text" [(ngModel)]="emiContact.name">
-    </div>
 
-    <div *ngFor="let emilieContact of contacts">
-        <div>
-            <p>{{emilieContact.name}}</p>
-        </div>
-    </div>
-    <button (click)="addContact()">Submit New Contact</button>
+        </form>
 
+    </div>
 </div>
+<div *ngFor="let emilieContact of contacts">
+    <div>
+        <p>{{emilieContact.name}}</p>
+    </div>
+</div>
+<button (click)="addContact()">Submit New Contact</button>

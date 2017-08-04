@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit, EventEmitter,Output, Input } from '@angular/core';
 import { SessionService } from './session.service';
 import { Router } from '@angular/router';
-
+import {MdSidenavModule} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +15,6 @@ export class AppComponent {
   ) { }
  
 }
+
+export default AppComponent;
 
