@@ -6,30 +6,33 @@
     </div>
 
     <div class="button-wrap example-sidenav-content">
+
         <button type="submit" class="btn" (click)="toggle_class()">EXPENSE</button>
 
-        <button type="submit " class="btn " (click)="toggle_class()">INCOME</button>
+        <button type="submit " class="btn " (click)="toggle_classInc()">INCOME</button>
+
     </div>
 
 </div>
 
 <div class="container">
 
-    <div class="row">
+    <div class="row fox">
         <app-fox></app-fox>
     </div>
 
-    <div class="row">
+    <div class="row transactions">
         <app-transactions></app-transactions>
     </div>
 
-    <div class="row">
+    <div class="row budgets">
         <app-budgets-list></app-budgets-list>
     </div>
 
-    <div class="row">
+    <div class="row charts">
         <app-charts-list></app-charts-list>
     </div>
+
     <div class="row">
         <!-- assign loaded overlay event to expense in app component -->
 

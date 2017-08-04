@@ -29,6 +29,13 @@ export class AppComponent {
     this.overlayIsHidden = !this.overlayIsHidden;
   }
 
+  loadedOverlayInc = 'income';
+  //loads overlay inc html - PAS EFFACER
+
+  toggle_classInc(){
+    this.overlayIncIsHidden = !this.overlayIncIsHidden;
+  }
+
 
 }
 
