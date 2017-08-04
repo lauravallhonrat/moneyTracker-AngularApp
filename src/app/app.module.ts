@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { SidebarModule } from 'ng-sidebar';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, MdCheckboxModule} from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, MdCheckboxModule } from '@angular/material';
 //components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,17 +24,20 @@ import { DdDirective } from './dd.directive';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-//services
-import{TransactionService} from './transactions/transactions.service';
-import { SessionService } from './session.service';
 import { HomeComponent } from './home/home.component';
+//services
+import { TransactionService } from './transactions/transactions.service';
+import { SessionService } from './session.service';
+
 
 
 const appRoutes: Routes = [
-  { path: 'login',  component: LoginComponent },
-  { path: 'signup',  component: SignupComponent },
-  { path: ' ',  component: TransactionsComponent },
-  { path: 'transactions',  component: TransactionsListComponent },
+  { path: '', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'transactions', component: HomeComponent, canActivate: [SessionService]},
+  { path: '**', redirectTo: '' },
+
+  //{ path: 'transactions',  component: TransactionsListComponent },
   // { path: 'phones/new',  component: AddPhoneComponent, canActivate: [SessionService] },
   // { path: 'phones/:id', component: PhonesDetailsComponent, canActivate: [SessionService] }
 ];
@@ -63,7 +66,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdButtonModule, 
+    MdButtonModule,
     MdCheckboxModule,
     MdDatepickerModule,
     MdNativeDateModule,
@@ -72,8 +75,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule.forRoot()  
-],
+    NgbModule.forRoot()
+  ],
   providers: [SessionService],
   bootstrap: [AppComponent]
 })

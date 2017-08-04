@@ -23,15 +23,24 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitLogin() {
-  	this.session.login(this.user)
-  		.subscribe(
-  			(data) => {
-  				this.router.navigate([' ']);
-  			},
-  			(err) => {
-  				this.error = err;
-  			});
+   submitSignup() {
+     console.log("first time on signup");
+     console.log("the user inside of signup", this.user);
+     
+    this.session.signup(this.user)
+      .subscribe(result => {
+          console.log("inside of first submit if true");
+          
+          if (result === true) {
+              // login successful
+              console.log('result ok', result);
+              this.router.navigate(['/']);
+          } else {
+                console.log('result ko', result);
+              // login failed
+              // this.error = 'Username or password is incorrect';
+          }
+      });
   }
 
 }

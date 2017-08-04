@@ -14,23 +14,5 @@ export class AppComponent {
   	private router: Router,
   ) { }
  
- 
- //this for navigation expenses/income
-  loadedOverlay = 'expense';
-//loads overlay expenses html
-
-
-  onNavigate(overlay: string){
-    this.loadedOverlay = overlay;
-  }
-
-
-
-  // private _opened: boolean = false;
-
-  // private _toggleSidebar() {
-  //   this._opened = !this._opened;
-  // }
-  
 }
 
