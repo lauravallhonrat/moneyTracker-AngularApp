@@ -1,7 +1,9 @@
 <app-header (featureSelected)="onNavigate($event)"></app-header>
 <!-- event method from header component -->
 <div class="container">
-
+    <div class="row">
+        <div (click)="logout()">Logout</div>
+    </div>
     <div class="row">
         <app-fox></app-fox>
     </div>

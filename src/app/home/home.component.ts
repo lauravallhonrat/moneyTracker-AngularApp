@@ -24,5 +24,8 @@ constructor(
   onNavigate(overlay: string){
     this.loadedOverlay = overlay;
   }
+  logout(){
+    this.session.logout();
+  }
 
 }
