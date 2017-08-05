@@ -35,13 +35,13 @@ implements OnInit {
   submitForm(myForm: NgForm) {
     console.log("Received form", myForm.value.selectedDate);
     console.log(myForm);
-    // resetThatStuff();
+    //resetThatStuff();
     // process form submitting
     //myForm.reset();
     // close form modal
-    //close_classInc();
+    this.close_classInc();
   }
-  // resetThatStuff() {
+  // function resetThatStuff() {
   //   myForm.reset();
   // }
 

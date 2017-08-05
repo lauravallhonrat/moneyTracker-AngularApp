@@ -86,7 +86,8 @@ select {
     background-color: white;
     border-radius: 40px;
     height: 40px;
-    max-width: 300px;
+    max-width: 400px;
+    min-width: 300px;
     color: #333;
     padding-left: 15px;
     padding-right: 15px;
@@ -102,13 +103,20 @@ option {
 }
 
 .input-group-btn {
-    position: absolute;
-    left: 270px;
-    top: 35px;
+    align-self: center;
+    margin-left: -40px;
 }
 
 .relative {
     position: relative;
+}
+
+.center-that {
+    align-self: center;
+}
+
+.date {
+    display: flex;
 }
 
 

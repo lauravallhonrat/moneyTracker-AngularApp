@@ -13,8 +13,10 @@
             </div> -->
 
             <div class="col-sm-6 inputbox">
+                <!-- <div class="center-that"> -->
                 <label for="Amount">Amount</label>
                 <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
+                <!-- </div> -->
             </div>
 
 
@@ -26,6 +28,7 @@
                 </md-select>
             </div> -->
             <div class="col-sm-6 inputbox">
+                <!-- <div class="center-that"> -->
                 <label for="sel1">Category</label>
                 <select class="form-control" id="sel1" [(ngModel)]="selectedCategory" name="category" required placeholder="Which Category?">
                     
@@ -35,6 +38,7 @@
                     </option>
                     <span class="caret"></span>
             </select>
+                <!-- </div> -->
             </div>
 
             <!-- <div class="col-sm-6">
@@ -44,32 +48,49 @@
                 </md-input-container>
                 <md-datepicker #picker></md-datepicker>
             </div> -->
-            <div class="col-sm-6 inputbox relative second">
+            <div class="col-sm-6 inputbox relative">
+                <!-- <div class="center-that"> -->
+
                 <label for="Date">Date</label>
-                <input mdInput [mdDatepicker]="picker" mdDatepicker name="selectedDate" [(ngModel)]="selectedDate">
-                <div class="input-group-btn">
-                    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                <div class="date">
+                    <input mdInput [mdDatepicker]="picker" mdDatepicker name="selectedDate" [(ngModel)]="selectedDate">
+                    <div class="input-group-btn center-that">
+                        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                    </div>
+                    <md-datepicker #picker></md-datepicker>
                 </div>
 
-                <!-- <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                </span> -->
-                <md-datepicker #picker></md-datepicker>
+                <!-- </div> -->
             </div>
 
-            <div class="col-sm-6">
+            <!-- <div class="col-sm-6">
                 <md-select placeholder="Which Account" [(ngModel)]="selectedAccount" name="account">
                     <md-option *ngFor="let account of accounts" [value]="account.value">
                         {{account.viewValue}}
                     </md-option>
                 </md-select>
-
-                <!-- <p> Selected value: {{selectedValue}} </p> -->
+            </div>-->
+            <div class="col-sm-6 inputbox">
+                <!-- <div class="center-that"> -->
+                <label for="sel2">Account</label>
+                <select class="form-control" id="sel2" [(ngModel)]="selectedAccount" name="account" required placeholder="Which Category?">
+                    
+                <option value="" selected disabled>Which account?? </option>
+                <option *ngFor="let account of accounts" [value]="account.value">
+                        {{account.viewValue}}
+                </option>
+                <span class="caret"></span>
+                </select>
+                <!-- </div> -->
             </div>
+
+
             <div class="row buttons">
                 <button class="btn btn-cancel" (click)="close_classInc()">CANCEL</button>
                 <button class="btn btn-exp" type="submit">ADD THIS</button>
             </div>
+
+
 
             <p></p>
 
