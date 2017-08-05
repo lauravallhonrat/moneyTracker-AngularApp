@@ -79,7 +79,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     MdSidenavModule
   ],
-  providers: [SessionService],
+  providers: [SessionService,TransactionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
