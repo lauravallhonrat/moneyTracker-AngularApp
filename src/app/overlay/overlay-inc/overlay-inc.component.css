@@ -69,6 +69,49 @@
 }
 
 
+/* ===== BUTTONS STYLING ===== */
+
+.inputbox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-left: 15px;
+}
+
+input,
+select {
+    background-color: white;
+    border-radius: 40px;
+    height: 40px;
+    max-width: 300px;
+    color: #333;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.2em;
+}
+
+select {
+    -webkit-appearance: none;
+}
+
+option {
+    color: #333;
+}
+
+.input-group-btn {
+    position: absolute;
+    left: 270px;
+    top: 35px;
+}
+
+.relative {
+    position: relative;
+}
+
+
 /* The animation code */
 
 @keyframes comeHither {
