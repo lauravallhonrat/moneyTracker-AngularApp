@@ -4,23 +4,34 @@ html {
 }
 
 body {
-    background: linear-gradient(135deg, rgba(95, 80, 227, 1) 0%, rgba(195, 104, 214, 1) 100%) no-repeat;
     height: 100%;
-    color: #fff;
-    margin: 0;
-    padding: 0;
+    margin-top: -20px;
 }
 
-.container {
+.mainbox {
+    /* background: linear-gradient(135deg, #179a6c) 0%, #aed86d no-repeat; */
+    background: linear-gradient(to bottom right, rgba(23, 154, 108, 1), rgba(174, 215, 109, 1)) no-repeat;
     height: 100vh;
+    color: #fff;
+    min-height: 800px;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
 }
 
 .butts2 {
     color: #fff;
-    background-color: #333;
+    background-color: #FF8039;
     padding: 10px;
     border-radius: 4px;
     flex-shrink: 0;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.center-that {
+    display: flex;
+    justify-content: center;
 }
 
 .logbox {
@@ -32,7 +43,7 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .account-message,
@@ -76,7 +87,7 @@ body {
 .butts2:hover,
 .butts2:focus,
 .butts2:active {
-    background-color: #8659de;
+    background-color: rgba(23, 154, 108, 1);
     /* font-weight: bold; */
 }
 
@@ -87,6 +98,8 @@ img {
 
 .login {
     padding-top: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .bubblebox {
@@ -102,15 +115,18 @@ img {
 }
 
 .bubble {
-    width: 400px;
+    width: auto;
+    max-width: 400px;
     height: auto;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     color: #333;
-    font-family: "Handlee", sans-serif;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
     font-size: 1.3em;
+    margin-bottom: 20px;
 }
 
 .bubble>p {
@@ -122,6 +138,12 @@ img {
     height: 20px;
 }
 
+.title {
+    text-align: center;
+    color: #333;
+    font-size: 1.3em;
+}
+
 form>.alert {
     border: none;
     background: none;
@@ -131,8 +153,8 @@ form>.alert {
 }
 
 .form-control:focus {
-    border-color: #8659de;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(195, 104, 214, .6);
+    border-color: rgba(23, 154, 108, 1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(23, 154, 108, .6);
 }
 
 
@@ -140,21 +162,29 @@ form>.alert {
 
 @keyframes floating {
     0% {
-        transform: translateY(-5px);
+        transform: translateY(0px);
         opacity: 1;
     }
-    50% {
-        transform: translateY(+5px);
-        opacity: 0.8;
+    63% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    65% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    68% {
+        transform: translateY(0px);
+        opacity: 1;
     }
     100% {
-        transform: translateY(-5px);
+        transform: translateY(0px);
         opacity: 1;
     }
 }
 
-.zen {
+.fox {
     display: flex;
     justify-content: center;
-    animation: floating 4s infinite;
+    animation: floating 5s infinite;
 }

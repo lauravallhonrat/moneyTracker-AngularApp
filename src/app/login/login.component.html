@@ -19,10 +19,11 @@
 
     <div class="login">
         <div class="logbox">
+            <p class="title">LOGIN</p>
             <form (ngSubmit)="submitLogin()" #myForm="ngForm">
                 <div class="form-group">
-                    <label for="InputUsername">username</label>
-                    <input type="email" class="form-control" id="InputUsername" placeholder="username" [(ngModel)]="user.username" name="username">
+                    <label for="InputUsername">Email Address</label>
+                    <input type="email" class="form-control" id="InputUsername" placeholder="Email Address" [(ngModel)]="user.username" name="username">
                 </div>
                 <div class="form-group">
                     <label for="InputPassword">Password</label>
@@ -30,7 +31,7 @@
                 </div>
                 <div *ngIf="error" class="alert alert-danger" role="alert">{{ error.statusText }}</div>
                 <div class="center-that">
-                    <button type="submit" class="btn butts2">Login</button>
+                    <button type="submit" class="btn butts2">LOGIN</button>
                 </div>
 
             </form>
