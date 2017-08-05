@@ -92,6 +92,15 @@ select {
     padding-left: 15px;
     padding-right: 15px;
     font-size: 1.2em;
+    border: none;
+    outline: none;
+}
+
+input:hover,
+input:active,
+input:focus {
+    border: none;
+    outline: none;
 }
 
 select {

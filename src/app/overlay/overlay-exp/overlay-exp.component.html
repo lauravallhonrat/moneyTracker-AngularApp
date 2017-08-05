@@ -1,46 +1,98 @@
-<div [className]="'expense-block'">
+<div [className]="'income-block'">
     <!-- *ngIf="visible" -->
-    <p>EXPENSE</p>
+    <p class="title">EXPENSE</p>
 
     <div class="form-group">
 
         <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
 
-            <div class="col-sm-3">
+            <!-- <div class="col-sm-6">
                 <md-input-container>
                     <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
                 </md-input-container>
+            </div> -->
+
+            <div class="col-sm-6 inputbox">
+                <!-- <div class="center-that"> -->
+                <label for="Amount">Amount</label>
+                <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
+                <!-- </div> -->
             </div>
 
-            <div class="col-sm-3">
+
+            <!-- <div class="col-sm-6">
                 <md-select placeholder="Which Category" [(ngModel)]="selectedCategory" name="category" required>
                     <md-option *ngFor="let category of categories" [value]="category.value">
                         {{category.viewValue}}
                     </md-option>
                 </md-select>
+            </div> -->
+            <div class="col-sm-6 inputbox">
+                <!-- <div class="center-that"> -->
+                <label for="sel1">Category</label>
+                <select class="form-control" id="sel1" [(ngModel)]="selectedCategory" name="category" required placeholder="Which Category?">
+                    
+                <option value="" selected disabled>Which category? </option>
+                <option *ngFor="let category of categories" [value]="category.value" selected>
+                        {{category.viewValue}}
+                    </option>
+                    <span class="caret"></span>
+            </select>
+                <!-- </div> -->
             </div>
 
-            <div class="col-sm-3">
+            <!-- <div class="col-sm-6">
                 <md-input-container>
-                    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" mdDatepicker [value]="today">
-                    <button mdSuffix [mdDatepickerToggle]="picker" [(ngModel)]="selectedDate" name="date" ngDefaultControl></button>
+                    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" mdDatepicker name="selectedDate" [(ngModel)]="selectedDate">
+                    <button mdSuffix [mdDatepickerToggle]="picker"></button>
                 </md-input-container>
                 <md-datepicker #picker></md-datepicker>
+            </div> -->
+            <div class="col-sm-6 inputbox relative">
+                <!-- <div class="center-that"> -->
+
+                <label for="Date">Date</label>
+                <div class="date">
+                    <input mdInput [mdDatepicker]="picker" mdDatepicker name="selectedDate" [(ngModel)]="selectedDate">
+                    <div class="input-group-btn center-that">
+                        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                    </div>
+                    <md-datepicker #picker></md-datepicker>
+                </div>
+
+                <!-- </div> -->
             </div>
 
-            <div class="col-sm-3">
+            <!-- <div class="col-sm-6">
                 <md-select placeholder="Which Account" [(ngModel)]="selectedAccount" name="account">
                     <md-option *ngFor="let account of accounts" [value]="account.value">
                         {{account.viewValue}}
                     </md-option>
                 </md-select>
+            </div>-->
+            <div class="col-sm-6 inputbox">
+                <!-- <div class="center-that"> -->
+                <label for="sel2">Account</label>
+                <select class="form-control" id="sel2" [(ngModel)]="selectedAccount" name="account" required placeholder="Which Category?">
+                    
+                <option value="" selected disabled>Which account?? </option>
+                <option *ngFor="let account of accounts" [value]="account.value">
+                        {{account.viewValue}}
+                </option>
+                <span class="caret"></span>
+                </select>
+                <!-- </div> -->
+            </div>
 
-                <!-- <p> Selected value: {{selectedValue}} </p> -->
+
+            <div class="row buttons">
+                <button class="btn btn-cancel" (click)="close_classInc()">CANCEL</button>
+                <button class="btn btn-exp" type="submit">ADD THIS</button>
             </div>
-            <div class="row">
-                <button class="btn" (click)="close_classExp()">CANCEL</button>
-                <button class="btn" type="submit">ADD THIS</button>
-            </div>
+
+
+
+            <p></p>
 
         </form>
 
