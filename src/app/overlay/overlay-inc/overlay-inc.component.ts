@@ -13,6 +13,9 @@ import {
 import { NgForm } from '@angular/forms';
 import contactList from './contacts';
 import AppComponent from '../../app.component'
+import { TransactionService } from '../../transactions/transactions.service';
+import { Router } from '@angular/router';
+import {Transaction} from '../../transactions/transactions.model';
 
 @Component({
   selector: 'app-overlay-inc',
@@ -22,8 +25,20 @@ import AppComponent from '../../app.component'
 export class OverlayIncComponent 
 implements OnInit {
 
-  contacts: Object[];
-  emiContact: Object = {};
+   constructor(
+  	private transactionService: TransactionService,
+  	private router: Router
+  ) { }
+ 
+  // contacts: Object[];
+  // emiContact: Object = {};
+// ====== DATA ====== //
+
+  public selectedCategory: string;
+  public selectedAccount: string;
+  public selectedAmount: any;
+  public selectedDate: Date;
+  transactions: Transaction[];
 
   toggleVar: false;
   @Output() hide = new EventEmitter<boolean>();
@@ -33,8 +48,17 @@ implements OnInit {
   }
 
   submitForm(myForm: NgForm) {
-    console.log("Received form", myForm.value.selectedDate);
+   
     console.log(myForm);
+    this.transactionService.add(this.transactions)
+  		.subscribe((res)=>{
+  			console.log(res)
+  			this.router.navigate(['/transactions'])		
+      });
+     
+  	 console.log("Received form", myForm.value.selectedDate, myForm.value.selectedAccount,myForm.value.selectedAmount,myForm.value.selectedCategory);
+    // process form submitting
+    // myForm.reset();
     //resetThatStuff();
     // process form submitting
     //myForm.reset();
@@ -48,24 +72,12 @@ implements OnInit {
   // constructor (@Host() app: AppComponent) {}
 
   ngOnInit() {
-    this.contacts = contactList;
-    this.selectedDate = new Date();
+  //   this.contacts = contactList;
+  //   this.selectedDate = new Date();
   }
 
-  // addContact(){
-  //   // console.log("Add contact has been called");
-  //   // add contact to contacts list
-  //   this.contacts.push(this.emiContact);
-  //   // clear inputs
-  //   this.emiContact= {}; // creating a new object
-  // }
 
-// ====== DATA ====== //
 
-  public selectedCategory: string;
-  public selectedAccount: string;
-  public selectedAmount: any;
-  public selectedDate: Date;
 
   accounts = [
     {value: 'main-0', viewValue: 'Main'},
