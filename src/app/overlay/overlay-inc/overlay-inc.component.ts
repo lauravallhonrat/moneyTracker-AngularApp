@@ -50,7 +50,6 @@ implements OnInit {
   submitForm(myForm: NgForm) {
    
     console.log(myForm);
-<<<<<<< HEAD
     this.transactionService.add(this.transactions)
   		.subscribe((res)=>{
   			console.log(res)
@@ -60,11 +59,9 @@ implements OnInit {
   	 console.log("Received form", myForm.value.selectedDate, myForm.value.selectedAccount,myForm.value.selectedAmount,myForm.value.selectedCategory);
     // process form submitting
     // myForm.reset();
-=======
     //resetThatStuff();
     // process form submitting
     //myForm.reset();
->>>>>>> 08213c119eabba508f0c4fff35dbd6b02a774a93
     // close form modal
     this.close_classInc();
   }
