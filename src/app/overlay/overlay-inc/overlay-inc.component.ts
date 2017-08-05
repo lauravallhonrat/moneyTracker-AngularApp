@@ -6,7 +6,8 @@ import {
   HostBinding, 
   Output, 
   Input, 
-  EventEmitter 
+  EventEmitter,
+  ViewEncapsulation 
 } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
@@ -34,11 +35,15 @@ implements OnInit {
   submitForm(myForm: NgForm) {
     console.log("Received form", myForm.value.selectedDate);
     console.log(myForm);
-    
+    // resetThatStuff();
     // process form submitting
-    myForm.reset();
+    //myForm.reset();
     // close form modal
+    //close_classInc();
   }
+  // resetThatStuff() {
+  //   myForm.reset();
+  // }
 
   // constructor (@Host() app: AppComponent) {}
 
@@ -84,4 +89,5 @@ implements OnInit {
   //   form.resetForm({ selectedCategory: this.selectedCategory });
   //   form.resetForm({ selectedDate: this.selectedDate });
   // }
+  encapsulation: ViewEncapsulation.Native
 }

@@ -98,3 +98,17 @@ h3 {
     box-shadow: 0px 2px 0px rgba(34, 126, 82, 1);
     margin-left: 10px;
 }
+
+.btn-exp:focus,
+.btn-exp:hover,
+.btn-inc:focus,
+.btn-inc:hover {
+    outline: none;
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.btn-exp:active,
+.btn-inc:active {
+    outline: none;
+}

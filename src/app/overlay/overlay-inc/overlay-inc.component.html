@@ -1,18 +1,24 @@
 <div [className]="'income-block'">
     <!-- *ngIf="visible" -->
-    <p>INCOME</p>
+    <p class="title">INCOME</p>
 
     <div class="form-group">
 
         <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
 
-            <div class="col-sm-3">
+            <!-- <div class="col-sm-6">
                 <md-input-container>
                     <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
                 </md-input-container>
+            </div> -->
+
+            <div class="col-sm-6">
+                <label for="Amount">Amount</label>
+                <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
             </div>
 
-            <div class="col-sm-3">
+
+            <div class="col-sm-6">
                 <md-select placeholder="Which Category" [(ngModel)]="selectedCategory" name="category" required>
                     <md-option *ngFor="let category of categories" [value]="category.value">
                         {{category.viewValue}}
@@ -20,7 +26,7 @@
                 </md-select>
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 <md-input-container>
                     <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" mdDatepicker name="selectedDate" [(ngModel)]="selectedDate">
                     <button mdSuffix [mdDatepickerToggle]="picker"></button>
@@ -28,7 +34,7 @@
                 <md-datepicker #picker></md-datepicker>
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 <md-select placeholder="Which Account" [(ngModel)]="selectedAccount" name="account">
                     <md-option *ngFor="let account of accounts" [value]="account.value">
                         {{account.viewValue}}
@@ -37,9 +43,9 @@
 
                 <!-- <p> Selected value: {{selectedValue}} </p> -->
             </div>
-            <div class="row">
-                <button class="btn" (click)="close_classInc()">CANCEL</button>
-                <button class="btn" type="submit">ADD THIS</button>
+            <div class="row buttons">
+                <button class="btn btn-cancel" (click)="close_classInc()">CANCEL</button>
+                <button class="btn btn-exp" type="submit">ADD THIS</button>
             </div>
 
         </form>
