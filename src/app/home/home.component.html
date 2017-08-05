@@ -1,46 +1,52 @@
-<div class="banner">
+<div class="mainbox">
 
-    <div class="balance">
-        <h3>BALANCE</h3>
-        <h1>BALANCE.VALUE</h1>
+    <div class="banner">
+        <div class="banner-image">
+
+            <div class="balance">
+                <h3>BALANCE</h3>
+                <h1>balance.value</h1>
+            </div>
+
+            <div class="button-wrap example-sidenav-content">
+
+                <button type="submit" class="btn btn-exp" (click)="toggle_class()">EXPENSE</button>
+
+                <button type="submit " class="btn btn-inc" (click)="toggle_classInc()">INCOME</button>
+
+            </div>
+        </div>
+
     </div>
 
-    <div class="button-wrap example-sidenav-content">
+    <div class="container">
 
-        <button type="submit" class="btn" (click)="toggle_class()">EXPENSE</button>
+        <div class="row fox">
+            <app-fox></app-fox>
+        </div>
 
-        <button type="submit " class="btn " (click)="toggle_classInc()">INCOME</button>
+        <div class="row transactions">
+            <app-transactions></app-transactions>
+        </div>
 
-    </div>
+        <div class="row budgets">
+            <app-budgets-list></app-budgets-list>
+        </div>
 
-</div>
+        <div class="row charts">
+            <app-charts-list></app-charts-list>
+        </div>
 
-<div class="container">
+        <div class="row">
+            <!-- assign loaded overlay event to expense in app component -->
 
-    <div class="row fox">
-        <app-fox></app-fox>
-    </div>
+            <app-overlay-exp (hide)='onHide($event)' [hidden]="overlayIsHidden"></app-overlay-exp>
 
-    <div class="row transactions">
-        <app-transactions></app-transactions>
-    </div>
+            <!-- expense is a keyword coming from header html -->
 
-    <div class="row budgets">
-        <app-budgets-list></app-budgets-list>
-    </div>
+            <app-overlay-inc (hide)='onHide($event)' [hidden]="overlayIncIsHidden"></app-overlay-inc>
 
-    <div class="row charts">
-        <app-charts-list></app-charts-list>
-    </div>
-
-    <div class="row">
-        <!-- assign loaded overlay event to expense in app component -->
-
-        <app-overlay-exp (hide)='onHide($event)' [hidden]="overlayIsHidden"></app-overlay-exp>
-
-        <!-- expense is a keyword coming from header html -->
-
-        <app-overlay-inc (hide)='onHide($event)' [hidden]="overlayIncIsHidden"></app-overlay-inc>
+        </div>
 
     </div>
 

@@ -1,3 +1,10 @@
+.fox-comp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
 img {
     height: 100px;
 }
@@ -15,14 +22,17 @@ img {
 }
 
 .bubble {
-    width: 400px;
+    margin-left: 20px;
+    width: auto;
+    max-width: 400px;
     height: auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    /* background-color: rgba(255, 255, 255, 1);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); */
+    background-color: #68BB6D;
     border-radius: 4px;
-    color: #333;
-    font-family: "Handlee", sans-serif;
+    color: #fff;
+    font-family: 'Shadows Into Light', cursive;
     font-size: 1.3em;
 }
 

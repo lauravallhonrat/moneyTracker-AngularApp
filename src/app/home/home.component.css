@@ -1,12 +1,43 @@
+html {
+    height: 100%;
+    min-height: 800px;
+}
+
+body {
+    height: 100%;
+    margin-top: -20px;
+}
+
+.mainbox {
+    /* background: linear-gradient(135deg, #179a6c) 0%, #aed86d no-repeat; */
+    height: 100%;
+    min-height: 800px;
+    margin: 0;
+    padding: 0;
+    background-color: #F2FEF1;
+    font-family: 'Amaranth', Arial, Helvetica, sans-serif;
+}
+
 .banner {
     position: relative;
     width: 100vw;
     height: 130px;
-    margin-bottom: 40px;
-    background-color: royalblue;
-    background: linear-gradient(to bottom right, #BF186F, #39C9DF);
+    margin-bottom: 30px;
+    background: linear-gradient(to bottom right, rgba(23, 154, 108, 1), rgba(174, 215, 109, 1)) repeat-x 0 100%;
+    /* display: flex;
+    justify-content: center; */
+    background-repeat: repeat;
+}
+
+.banner-image {
+    position: relative;
+    width: 100vw;
+    height: 130px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
+    background-image: url("http://localhost:3000/images/pattern.png");
+    background-repeat: repeat;
 }
 
 .balance {
@@ -49,4 +80,21 @@ h3 {
 
 .hide {
     display: none;
+}
+
+.btn {
+    border-radius: 35px;
+    height: 35px;
+    color: #fff;
+}
+
+.btn-exp {
+    background-color: #FD7326;
+    box-shadow: 0px 2px 0px rgba(178, 86, 35, 1)
+}
+
+.btn-inc {
+    background-color: #2FA46C;
+    box-shadow: 0px 2px 0px rgba(34, 126, 82, 1);
+    margin-left: 10px;
 }
