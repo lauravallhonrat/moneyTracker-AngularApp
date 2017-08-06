@@ -10,8 +10,7 @@ body {
 
 .mainbox {
     /* background: linear-gradient(135deg, #179a6c) 0%, #aed86d no-repeat; */
-    height: 100vh;
-    min-height: 800px;
+    height: 100%;
     margin: 0;
     padding: 0;
     background-color: #F2FEF1;
