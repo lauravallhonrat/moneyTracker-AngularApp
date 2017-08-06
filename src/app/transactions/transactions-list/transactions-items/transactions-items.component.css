@@ -1,0 +1,6 @@
+.bande {
+    display: flex;
+    height: 40px;
+    background-color: #fff;
+    box-shadow: 2px, 2px, 2px, rgba(0, 0, 0, .3);
+}

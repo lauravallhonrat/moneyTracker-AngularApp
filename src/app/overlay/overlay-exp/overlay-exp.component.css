@@ -1,5 +1,5 @@
 .income-block {
-    background-color: rgb(136, 55, 11);
+    background: linear-gradient(to bottom right, rgb(255, 165, 114), rgb(136, 55, 9));
     padding: 20px;
     width: 100vw;
     position: fixed;

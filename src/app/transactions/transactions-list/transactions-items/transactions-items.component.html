@@ -1,14 +1,16 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+<a href="#" class="bande clearfix" (click)="onSelected()">
     <!-- the ngFor allows us to loop through the elmts in transactions - transactions being the name of the array of Transaction in the trans-list.comp -->
-    <h4 class="list-group-item-heading">{{transaction.category}}
+    <!-- <img src="" alt="the image should be here :(" class="img-responsive icon" style="max-height: 30px"> -->
+
+    <p class="category">{{transaction.icon}}{{transaction.category}}
         <!-- calling this with item.nameofthepropfromtrans-list.comp -->
-    </h4>
-    <p class="list-group-item-text">{{transaction.amount}}</p>
-    <p class="list-group-item-text">{{transaction.date}}</p>
-    <p class="list-group-item-text">{{transaction.account}}</p>
+    </p>
+    <p class="amount">{{transaction.amount}}</p>
+    <p class="hide-this">{{transaction.date}}</p>
+    <p class="hide-this">{{transaction.account}}</p>
 
-    <pre class="list-group-item-text">{{transaction.transactionType}}</pre>
+    <pre class="hide-this">{{transaction.transactionType}}</pre>
 
-    <img src="{{transaction.icon}}" alt="the image should be here :(" class="img-responsive" style="max-height: 30px">
+
     <!-- <button type="button" class="btn">Detaaaails</button> -->
 </a>

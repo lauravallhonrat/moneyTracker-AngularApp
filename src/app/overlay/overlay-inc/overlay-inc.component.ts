@@ -84,6 +84,7 @@ implements OnInit {
     {value: 'cash-1', viewValue: 'Cash'}
   ];
 
+
   categories = [
     {value: '0', viewValue: 'Food'},
     {value: '1', viewValue: 'Transportation'},
@@ -93,6 +94,29 @@ implements OnInit {
     {value: '5', viewValue: 'Utilities'},
     {value: '6', viewValue: 'Health'},
     {value: '7', viewValue: 'Other'}
+  ];
+
+  categoriesInc = [
+    {value: '8', viewValue: 'Salary'},
+    {value: '9', viewValue: 'Freelance'},
+    {value: '10', viewValue: 'Other'}
+  ];
+
+  icon = [
+    {value: '0a', viewValue: '<i class="fa fa-cutlery" aria-hidden="true"></i>'},
+    {value: '1a', viewValue: '<i class="fa fa-car" aria-hidden="true"></i>'},
+    {value: '2a', viewValue: '<i class="fa fa-glass" aria-hidden="true"></i>'},
+    {value: '3a', viewValue: '<i class="fa fa-shopping-bag" aria-hidden="true"></i>'},
+    {value: '4a', viewValue: '<i class="fa fa-home" aria-hidden="true"></i>'},
+    {value: '5a', viewValue: '<i class="fa fa-plug" aria-hidden="true"></i>'},
+    {value: '6a', viewValue: '<i class="fa fa-heartbeat" aria-hidden="true"></i>'},
+    {value: '7a', viewValue: '<i class="fa fa-gift" aria-hidden="true"></i>'}
+  ];
+
+  iconInc = [
+    {value: '8a', viewValue: '<i class="fa fa-suitcase" aria-hidden="true"></i>'},
+    {value: '9a', viewValue: '<i class="fa fa-thumbs-up" aria-hidden="true"></i>'},
+    {value: '10a', viewValue: '<i class="fa fa-star" aria-hidden="true"></i>'}
   ];
 
   // reset(form: ngForm){
