@@ -5,7 +5,7 @@
 
             <div class="balance">
                 <h3>Your balance</h3>
-                <h1>balance.value</h1>
+                <h1>balance.value <i class="fa fa-pencil" aria-hidden="true"></i></h1>
             </div>
 
             <div class="button-wrap example-sidenav-content">
@@ -25,15 +25,15 @@
             <app-fox></app-fox>
         </div>
 
-        <div class="row transactions">
+        <div class="col-md-4 col-xs-12 transactions">
             <app-transactions></app-transactions>
         </div>
 
-        <div class="row budgets">
+        <div class="col-md-4 col-xs-12 budgets">
             <app-budgets-list></app-budgets-list>
         </div>
 
-        <div class="row charts">
+        <div class="col-md-4 col-xs-12 charts">
             <app-charts-list></app-charts-list>
         </div>
 
@@ -48,6 +48,14 @@
 
         </div>
 
+
+
     </div>
 
 </div>
+
+<footer class="footer">
+    <div class="row logout">
+        <a href="#">Logout</a>
+    </div>
+</footer>

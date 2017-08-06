@@ -1,16 +1,29 @@
-<a href="#" class="bande clearfix" (click)="onSelected()">
-    <!-- the ngFor allows us to loop through the elmts in transactions - transactions being the name of the array of Transaction in the trans-list.comp -->
-    <!-- <img src="" alt="the image should be here :(" class="img-responsive icon" style="max-height: 30px"> -->
+<div class="big-box">
+    <div class="colour"></div>
+    <div class="bande">
 
-    <p class="category">{{transaction.icon}}{{transaction.category}}
+
+
+        <!-- <a href="#" class="clearfix" (click)="onSelected()"> -->
+        <!-- the ngFor allows us to loop through the elmts in transactions - transactions being the name of the array of Transaction in the trans-list.comp -->
+        <!-- <img src="" alt="the image should be here :(" class="img-responsive icon" style="max-height: 30px"> -->
         <!-- calling this with item.nameofthepropfromtrans-list.comp -->
-    </p>
-    <p class="amount">{{transaction.amount}}</p>
-    <p class="hide-this">{{transaction.date}}</p>
-    <p class="hide-this">{{transaction.account}}</p>
 
-    <pre class="hide-this">{{transaction.transactionType}}</pre>
+        <div class="category">
+            <p class="category">
+                <i class="fa 
+        {{transaction.icon}}" aria-hidden="true"></i>{{transaction.category}}
+            </p>
+        </div>
+        <div class="amount">
+            <p class="amount">{{transaction.amount}}</p>
+        </div>
 
 
-    <!-- <button type="button" class="btn">Detaaaails</button> -->
-</a>
+        <p class="hide-this ">{{transaction.date}}</p>
+        <p class="hide-this ">{{transaction.account}}</p>
+
+        <pre class="hide-this ">{{transaction.transactionType}}</pre>
+
+    </div>
+</div>
