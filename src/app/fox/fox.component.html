@@ -1,9 +1,17 @@
-<div class="fox-comp">
-    <img src="http://localhost:3000/images/fox-boom.png" alt="the fox should be here">
-
+<div class="fox-comp" [hidden]="regular">
+    <img src="http://localhost:3000/images/fox-boom.png" alt="the fox should be here" on-mouseover='onHover()'>
     <div class="bubblebox">
         <div class="bubble">
             <p>Did you spend any money today? Earned some?</p>
+        </div>
+    </div>
+</div>
+
+<div class="fox-comp" [hidden]="hover">
+    <img src="http://localhost:3000/images/fox-chill.png" alt="the fox should be chilling here" on-mouseleave='onOut()'>
+    <div class="bubblebox">
+        <div class="bubble">
+            <p>I'm totally ready, let's do this!</p>
         </div>
     </div>
 </div>

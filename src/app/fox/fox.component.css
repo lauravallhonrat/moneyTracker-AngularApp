@@ -3,6 +3,16 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    animation: 'foxon' 0.5s ease-in;
+}
+
+@keyframes foxon {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 img {
@@ -34,9 +44,52 @@ img {
     color: #fff;
     font-family: 'Shadows Into Light', cursive;
     font-size: 1.3em;
+    animation: 'bubbleon' 0.5s ease-in;
+}
+
+@keyframes bubbleon {
+    0% {
+        padding: 12px;
+    }
+    50% {
+        padding: 18px;
+    }
+    100% {
+        padding: 12px;
+    }
 }
 
 .bubble>p {
     margin-bottom: 0;
     text-align: center;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.big-box {
+    animation: 'bigboxon' 1s ease-in;
+    animation-play-state: paused;
+}
+
+.big-box:hover {
+    animation-play-state: running;
+    border: 1px solid red;
+}
+
+@keyframes bigboxon {
+    from {
+        margin-top: -2px;
+    }
+    to {
+        margin-top: 0;
+    }
+}
+
+.fufu {
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    display: flex;
 }
