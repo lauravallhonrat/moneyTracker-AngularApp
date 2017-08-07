@@ -16,14 +16,13 @@ constructor(
 
 //getThoseTransactions = new EventEmitter<Transaction>();
 
-getTransactions(user) {
-	let id = user._id
-    // return this.http.get('http://localhost:3000/transactions')
-    //     .map((res) => res.json());
-	return this.http.get(`http://localhost:3000/transactions/${id}`)
+getTransactions() {
+	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
+	let options = new RequestOptions({ headers: headers });
+	  
+	return this.http.get(`http://localhost:3000/api/transactions`, options)
         .map((response) => {
-	
-		return response.json()
+		return response.json();
 		
             // return (<any>response.json()).map(item => {
             //     return new Transaction(item.category, item.amount, item.date,item.account,item.transactionType, item.icon);
@@ -40,23 +39,22 @@ getTransactions(user) {
 add(transaction,user) {
 	let id = user._id
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
-	  let options = new RequestOptions({ headers: headers });
-	  console.log("add",transaction.value)
-	  return this.http.post(`http://localhost:3000/transactions/${id}`, transaction.value)
+	let options = new RequestOptions({ headers: headers });
+	  return this.http.post(`http://localhost:3000/api/transactions`, transaction.value, options)
 	  .map((res) => {res.json()})
   }
 
 edit(transaction) {
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
   	let options = new RequestOptions({ headers: headers });
-  	return this.http.put(`http://localhost:3000/transactions/${transaction._id}`, transaction, options)
+  	return this.http.put(`http://localhost:3000/api/transactions/${transaction._id}`, transaction, options)
   		.map( (res) => res.json());
   }
 
 remove(id) {
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
   	let options = new RequestOptions({ headers: headers });
-  	return this.http.delete(`http://localhost:3000/transactions/${id}`, options)
+  	return this.http.delete(`http://localhost:3000/api/transactions/${id}`, options)
   		.map( (res) => res.json());
   }
 // addTransaction(transaction:Transaction){
