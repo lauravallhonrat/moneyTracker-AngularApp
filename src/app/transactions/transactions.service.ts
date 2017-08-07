@@ -5,9 +5,12 @@ import { Router, CanActivate } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { SessionService } from '../session.service';
 import 'rxjs/add/operator/toPromise';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class TransactionService {
+
+	private transactionSubject = new Subject<any>();
 
 constructor(
 	private http: Http,
@@ -36,8 +39,7 @@ getTransactions() {
 //   		.map((res) => res.json());
 //   }
 
-add(transaction,user) {
-	let id = user._id
+add(transaction) {
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
 	let options = new RequestOptions({ headers: headers });
 	  return this.http.post(`http://localhost:3000/api/transactions`, transaction.value, options)
@@ -57,6 +59,16 @@ remove(id) {
   	return this.http.delete(`http://localhost:3000/api/transactions/${id}`, options)
   		.map( (res) => res.json());
   }
+
+transactionAdded(obj: any) {
+	console.log("Streaming", obj);
+	this.transactionSubject.next({text: obj});
+}
+
+getTransactionAdded(): Observable<any> {
+	return this.transactionSubject.asObservable();
+}
+
 // addTransaction(transaction:Transaction){
 //     this.transactions.push(transaction);
 // }
