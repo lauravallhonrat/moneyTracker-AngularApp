@@ -14,19 +14,23 @@ export class TransactionsItemsComponent implements OnInit {
 
   // deleteThing: boolean = false;
   // showThing:boolean = true;
-  // deleteThat = true;
+  deleteThat: boolean = true;
+  showThat: boolean = false;
   
-  // myFunction(){
-  //   console.log("click bande");
-  //   this.deleteIsHidden = false;
-  //   this.showThing = false;
-  // }
-  // nope(){
-  //   console.log("nope");
-  //   this.deleteThing = false;
-  //   this.showThing = true;
-  //   console.log(this.deleteThing, this.showThing);
-  // }
+  showDelete(){
+    console.log("click bande");
+    this.deleteThat = !this.deleteThat;
+    this.showThat = !this.showThat;
+  }
+  nope(){
+    console.log("nope");
+    this.deleteThat = !this.deleteThat;
+    this.showThat = !this.showThat;
+  }
+
+  deleteTransaction(){
+    console.log("should delete that transaction");
+  }
 
   @Input() transaction: Transaction;
   //transaction coming from transaction model

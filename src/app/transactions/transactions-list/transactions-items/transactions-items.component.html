@@ -1,19 +1,13 @@
 <div class="big-box">
     <div class="colour"></div>
-    <div class="bande">
+    <div class="bande" (click)=showDelete() [hidden]="showThat">
 
         <!-- <a href="#" class="clearfix" (click)="onSelected()"> -->
         <!-- the ngFor allows us to loop through the elmts in transactions - transactions being the name of the array of Transaction in the trans-list.comp -->
         <!-- <img src="" alt="the image should be here :(" class="img-responsive icon" style="max-height: 30px"> -->
         <!-- calling this with item.nameofthepropfromtrans-list.comp -->
 
-        <div [hidden]="deleteThat" class="bande2">
-            <p>Delete?</p>
-            <div class="amount">
-                <button type="text" (click)='nope()'>No</button>
-                <button type="text" class="yes">Yes</button>
-            </div>
-        </div>
+
 
 
         <div class="category">
@@ -33,5 +27,14 @@
 
         <pre class="hide-this ">{{transaction.transactionType}}</pre>
 
+    </div>
+    <div class="bande" [hidden]="deleteThat">
+        <div class="bande2">
+            <p>Delete?</p>
+            <div class="amount">
+                <button type="text" (click)=nope()>No</button>
+                <button type="text" class="yes" (click)=deleteTransaction()>Yes</button>
+            </div>
+        </div>
     </div>
 </div>
