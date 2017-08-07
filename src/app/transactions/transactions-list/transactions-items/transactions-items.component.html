@@ -2,12 +2,19 @@
     <div class="colour"></div>
     <div class="bande">
 
-
-
         <!-- <a href="#" class="clearfix" (click)="onSelected()"> -->
         <!-- the ngFor allows us to loop through the elmts in transactions - transactions being the name of the array of Transaction in the trans-list.comp -->
         <!-- <img src="" alt="the image should be here :(" class="img-responsive icon" style="max-height: 30px"> -->
         <!-- calling this with item.nameofthepropfromtrans-list.comp -->
+
+        <div [hidden]="deleteThat" class="bande2">
+            <p>Delete?</p>
+            <div class="amount">
+                <button type="text" (click)='nope()'>No</button>
+                <button type="text" class="yes">Yes</button>
+            </div>
+        </div>
+
 
         <div class="category">
             <p class="category">
@@ -15,6 +22,7 @@
         {{transaction.icon}}" aria-hidden="true"></i>{{transaction.category}}
             </p>
         </div>
+
         <div class="amount">
             <p class="amount">{{transaction.amount}}</p>
         </div>
