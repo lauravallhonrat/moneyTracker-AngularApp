@@ -11,7 +11,6 @@ import {
 } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
-import contactList from './contacts';
 import AppComponent from '../../app.component'
 import { TransactionService } from '../../transactions/transactions.service';
 import { Router } from '@angular/router';
@@ -30,8 +29,7 @@ implements OnInit {
   	private router: Router
   ) { }
  
-  // contacts: Object[];
-  // emiContact: Object = {};
+
 // ====== DATA ====== //
 
   public selectedCategory: string;
@@ -72,7 +70,6 @@ implements OnInit {
   // constructor (@Host() app: AppComponent) {}
 
   ngOnInit() {
-  //   this.contacts = contactList;
   //   this.selectedDate = new Date();
   }
 
