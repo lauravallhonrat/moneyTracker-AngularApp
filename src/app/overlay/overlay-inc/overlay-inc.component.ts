@@ -83,19 +83,19 @@ implements OnInit {
 
 
   accounts = [
-    {value: 'main-0', viewValue: 'Main'},
-    {value: 'cash-1', viewValue: 'Cash'}
+    {value: 'Main', viewValue: 'Main'},
+    {value: 'Cash', viewValue: 'Cash'}
   ];
 
   categories = [
-    {value: '0', viewValue: 'Food'},
-    {value: '1', viewValue: 'Transportation'},
-    {value: '2', viewValue: 'Social'},
-    {value: '3', viewValue: 'Clothing'},
-    {value: '4', viewValue: 'Rent'},
-    {value: '5', viewValue: 'Utilities'},
-    {value: '6', viewValue: 'Health'},
-    {value: '7', viewValue: 'Other'}
+    {value: 'Food', viewValue: 'Food'},
+    {value: 'Transportation', viewValue: 'Transportation'},
+    {value: 'Social', viewValue: 'Social'},
+    {value: 'Clothing', viewValue: 'Clothing'},
+    {value: 'Rent', viewValue: 'Rent'},
+    {value: 'Utilities', viewValue: 'Utilities'},
+    {value: 'Health', viewValue: 'Health'},
+    {value: 'Other', viewValue: 'Other'}
   ];
 
   // reset(form: ngForm){
