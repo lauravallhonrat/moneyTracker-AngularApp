@@ -126,6 +126,11 @@ option {
 
 .date {
     display: flex;
+    width: 100%;
+}
+
+.date>input {
+    width: 100%;
 }
 
 
