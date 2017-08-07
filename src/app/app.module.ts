@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdDatepickerModule, MdNativeDateModule, MaterialModule, MdCheckboxModule } from '@angular/material';
 import {MdSidenavModule} from '@angular/material';
+import { ChartsModule } from 'ng2-charts';
 //components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,6 +30,7 @@ import { HomeComponent } from './home/home.component';
 //services
 import { TransactionService } from './transactions/transactions.service';
 import { SessionService } from './session.service';
+import { ChartsComponent } from './charts/charts.component';
 
 
 
@@ -62,7 +64,8 @@ const appRoutes: Routes = [
     TransactionsComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,8 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
-    MdSidenavModule
+    MdSidenavModule,
+    ChartsModule
   ],
   providers: [SessionService,TransactionService],
   bootstrap: [AppComponent]

@@ -16,27 +16,33 @@ constructor(
 
 //getThoseTransactions = new EventEmitter<Transaction>();
 
-getTransactions() {
+getTransactions(user) {
+	let id = user._id
     // return this.http.get('http://localhost:3000/transactions')
     //     .map((res) => res.json());
-	return this.http.get('http://localhost:3000/transactions')
+	return this.http.get(`http://localhost:3000/transactions/${id}`)
         .map((response) => {
-            return (<any>response.json()).map(item => {
-                return new Transaction(item.category, item.amount, item.date,item.account,item.transactionType, item.icon);
-            }); // ORDER MATTERS
+	
+		return response.json()
+		
+            // return (<any>response.json()).map(item => {
+            //     return new Transaction(item.category, item.amount, item.date,item.account,item.transactionType, item.icon);
+            // }); // ORDER MATTERS
         });
 }
-getTransaction(id) {
-  	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
-  	let options = new RequestOptions({ headers: headers });
-  	return this.http.get(`http://localhost:3000/transactions/${id}`, options)
-  		.map((res) => res.json());
-  }
+// getTransaction(id) {
+//   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
+//   	let options = new RequestOptions({ headers: headers });
+//   	return this.http.get(`http://localhost:3000/transactions/${id}`, options)
+//   		.map((res) => res.json());
+//   }
 
-add(transaction) {
+add(transaction,user) {
+	let id = user._id
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
-  	let options = new RequestOptions({ headers: headers });
-	  return this.http.post('http://localhost:3000/transactions', options)
+	  let options = new RequestOptions({ headers: headers });
+	  console.log("add",transaction.value)
+	  return this.http.post(`http://localhost:3000/transactions/${id}`, transaction.value)
 	  .map((res) => {res.json()})
   }
 

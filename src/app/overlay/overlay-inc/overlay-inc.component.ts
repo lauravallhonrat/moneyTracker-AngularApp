@@ -48,12 +48,12 @@ implements OnInit {
   }
 
   submitForm(myForm: NgForm) {
-   
-    console.log(myForm);
-    this.transactionService.add(this.transactions)
+   let user = JSON.parse(localStorage.getItem("user"))
+    console.log("form",myForm.value);
+    this.transactionService.add(myForm,user)
   		.subscribe((res)=>{
   			console.log(res)
-  			this.router.navigate(['/transactions'])		
+        this.router.navigate(['/transactions'])		//fix this refresh transactions component
       });
      
   	 console.log("Received form", myForm.value.selectedDate, myForm.value.selectedAccount,myForm.value.selectedAmount,myForm.value.selectedCategory);

@@ -19,9 +19,12 @@ export class TransactionsListComponent implements OnInit {
   constructor(private transactionService: TransactionService) { }
 
   ngOnInit() {
-    this.transactionService.getTransactions()
-      .subscribe((_transactions) => {
-        this.transactions = _transactions;
+    let user = JSON.parse(localStorage.getItem("user"))
+    console.log(user)
+    this.transactionService.getTransactions(user)
+      .subscribe((response) => {
+        console.log("transactionslist",response)
+        this.transactions = response.transactions;
       });
   }
 
