@@ -11,7 +11,6 @@ import {
 } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
-import contactList from './contacts';
 import AppComponent from '../../app.component'
 import { TransactionService } from '../../transactions/transactions.service';
 import { Router } from '@angular/router';
@@ -30,8 +29,7 @@ implements OnInit {
   	private router: Router
   ) { }
  
-  // contacts: Object[];
-  // emiContact: Object = {};
+
 // ====== DATA ====== //
 
   public selectedCategory: string;
@@ -49,16 +47,10 @@ implements OnInit {
 
   submitForm(myForm: NgForm) {
    //let user = JSON.parse(localStorage.getItem("user"))
-    this.transactionService.add(myForm)
-      .subscribe((res)=>{
-  	// 		console.log(res)
-      //  this.router.navigate(['/transactions'])		//fix this refresh transactions component
-      console.log("Sending to stream", myForm.value);
-      this.transactionService.transactionAdded(myForm.value);
+    this.transactionService.add(myForm.value).subscribe((res) => {
+    //   //  this.router.navigate(['/transactions'])		//fix this refresh transactions component
     });
-
-
-     
+    
   	//  console.log("Received form", myForm.value.selectedDate, myForm.value.selectedAccount,myForm.value.selectedAmount,myForm.value.selectedCategory);
     // process form submitting
     // myForm.reset();
@@ -75,12 +67,8 @@ implements OnInit {
   // constructor (@Host() app: AppComponent) {}
 
   ngOnInit() {
-  //   this.contacts = contactList;
   //   this.selectedDate = new Date();
   }
-
-
-
 
   accounts = [
     {value: 'Main', viewValue: 'Main'},
@@ -97,6 +85,30 @@ implements OnInit {
     {value: 'Health', viewValue: 'Health'},
     {value: 'Other', viewValue: 'Other'}
   ];
+
+  categoriesInc = [
+    {value: 'Salary', viewValue: 'Salary'},
+    {value: 'Freelance', viewValue: 'Freelance'},
+    {value: 'Other', viewValue: 'Other'}
+  ];
+
+  icon = [
+    {value: '0a', viewValue: '<i class="fa fa-cutlery" aria-hidden="true"></i>'},
+    {value: '1a', viewValue: '<i class="fa fa-car" aria-hidden="true"></i>'},
+    {value: '2a', viewValue: '<i class="fa fa-glass" aria-hidden="true"></i>'},
+    {value: '3a', viewValue: '<i class="fa fa-shopping-bag" aria-hidden="true"></i>'},
+    {value: '4a', viewValue: '<i class="fa fa-home" aria-hidden="true"></i>'},
+    {value: '5a', viewValue: '<i class="fa fa-plug" aria-hidden="true"></i>'},
+    {value: '6a', viewValue: '<i class="fa fa-heartbeat" aria-hidden="true"></i>'},
+    {value: '7a', viewValue: '<i class="fa fa-gift" aria-hidden="true"></i>'}
+  ];
+
+  iconInc = [
+    {value: '8a', viewValue: '<i class="fa fa-suitcase" aria-hidden="true"></i>'},
+    {value: '9a', viewValue: '<i class="fa fa-thumbs-up" aria-hidden="true"></i>'},
+    {value: '10a', viewValue: '<i class="fa fa-star" aria-hidden="true"></i>'}
+  ];
+
 
   // reset(form: ngForm){
   //   form.resetForm({ selectedAmount: this.selectedAmount });

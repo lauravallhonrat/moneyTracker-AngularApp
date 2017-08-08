@@ -2,22 +2,22 @@ import {Transaction} from './transactions.model';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Router, CanActivate } from '@angular/router';
-import { Observable } from 'rxjs/Rx';
 import { SessionService } from '../session.service';
 import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class TransactionService {
 
-	private transactionSubject = new Subject<any>();
+	public transactionSubject;
 
 constructor(
 	private http: Http,
 	private session: SessionService
-) { }
-
-//getThoseTransactions = new EventEmitter<Transaction>();
+) { 
+	this.transactionSubject = new Subject();
+}
 
 getTransactions() {
 	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
@@ -42,8 +42,11 @@ getTransactions() {
 add(transaction) {
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
 	let options = new RequestOptions({ headers: headers });
-	  return this.http.post(`http://localhost:3000/api/transactions`, transaction.value, options)
-	  .map((res) => {res.json()})
+	return this.http.post(`http://localhost:3000/api/transactions`, transaction, options)
+	  .map(res => {
+		  this.transactionAdded(transaction);
+		  return res.json();
+	  });
   }
 
 edit(transaction) {
@@ -61,8 +64,7 @@ remove(id) {
   }
 
 transactionAdded(obj: any) {
-	console.log("Streaming", obj);
-	this.transactionSubject.next({text: obj});
+	this.transactionSubject.next(obj);
 }
 
 getTransactionAdded(): Observable<any> {
@@ -77,7 +79,6 @@ getTransactionAdded(): Observable<any> {
 //     return this.http.get('http://http://localhost:3000/transactions')
 //       .map((res) => res.json());
 //   }
-
 
 
 }

@@ -22,7 +22,7 @@
 
             <!-- <div class="col-sm-6">
                 <md-select placeholder="Which Category" [(ngModel)]="selectedCategory" name="category" required>
-                    <md-option *ngFor="let category of categories" [value]="category.value">
+                    <md-option *ngFor="let category of categoriesInc" [value]="category.value">
                         {{category.viewValue}}
                     </md-option>
                 </md-select>
@@ -33,7 +33,7 @@
                 <select class="form-control" id="sel1" [(ngModel)]="selectedCategory" name="category" required placeholder="Which Category?">
                     
                 <option value="" selected disabled>Which category? </option>
-                <option *ngFor="let category of categories" [value]="category.value" selected>
+                <option *ngFor="let category of categoriesInc" [value]="category.value" selected>
                         {{category.viewValue}}
                     </option>
                     <span class="caret"></span>
@@ -98,9 +98,3 @@
 
     </div>
 </div>
-<div *ngFor="let emilieContact of contacts">
-    <div>
-        <p>{{emilieContact.name}}</p>
-    </div>
-</div>
-<button (click)="addContact()">Submit New Contact</button>

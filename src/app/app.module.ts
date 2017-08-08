@@ -11,7 +11,6 @@ import {MdSidenavModule} from '@angular/material';
 import { ChartsModule } from 'ng2-charts';
 //components
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { TransactionsListComponent } from './transactions/transactions-list/transactions-list.component';
 import { TransactionsItemsComponent } from './transactions/transactions-list/transactions-items/transactions-items.component';
 import { BudgetsListComponent } from './budgets/budgets-list/budgets-list.component';
@@ -49,7 +48,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     TransactionsListComponent,
     TransactionsItemsComponent,
     BudgetsListComponent,

@@ -1,14 +1,41 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
-    <!-- the ngFor allows us to loop through the elmts in transactions - transactions being the name of the array of Transaction in the trans-list.comp -->
-    <h4 class="list-group-item-heading">{{transaction.category}}
+<div class="big-box">
+    <div class="colour"></div>
+    <div class="bande" (click)=showDelete() [hidden]="showThat">
+
+        <!-- <a href="#" class="clearfix" (click)="onSelected()"> -->
+        <!-- the ngFor allows us to loop through the elmts in transactions - transactions being the name of the array of Transaction in the trans-list.comp -->
+        <!-- <img src="" alt="the image should be here :(" class="img-responsive icon" style="max-height: 30px"> -->
         <!-- calling this with item.nameofthepropfromtrans-list.comp -->
-    </h4>
-    <p class="list-group-item-text">{{transaction.amount}}</p>
-    <p class="list-group-item-text">{{transaction.date}}</p>
-    <p class="list-group-item-text">{{transaction.account}}</p>
 
-    <pre class="list-group-item-text">{{transaction.transactionType}}</pre>
 
-    <img src="{{transaction.icon}}" alt="the image should be here :(" class="img-responsive" style="max-height: 30px">
-    <!-- <button type="button" class="btn">Detaaaails</button> -->
-</a>
+
+        <div class="category">
+            <p class="category">
+                <i class="fa {{transaction.icon}}" aria-hidden="true"></i>{{transaction.category}}
+
+            </p>
+        </div>
+
+        <div class="amount">
+            <p class="amount">{{transaction.amount}}</p>
+        </div>
+
+
+        <p class="hide-this ">{{transaction.date}}</p>
+        <p class="hide-this ">{{transaction.account}}</p>
+
+        <pre class="hide-this ">{{transaction.transactionType}}</pre>
+
+    </div>
+    <div class="bande" [hidden]="deleteThat">
+        <div class="bande2">
+            <p>Delete?</p>
+            <div class="amount">
+                <button type="text" (click)=nope()>No</button>
+                <button type="text" class="yes" (click)=deleteTransaction()>Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="big-box fufu row"></div>

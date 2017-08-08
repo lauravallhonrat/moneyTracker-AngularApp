@@ -9,7 +9,23 @@ import {TransactionService} from '../../transactions.service';
   styleUrls: ['./transactions-items.component.css']
 })
 export class TransactionsItemsComponent implements OnInit {
+  deleteThat: boolean = true;
+  showThat: boolean = false;
+  
+  showDelete(){
+    console.log("click bande");
+    this.deleteThat = !this.deleteThat;
+    this.showThat = !this.showThat;
+  }
+  nope(){
+    console.log("nope");
+    this.deleteThat = !this.deleteThat;
+    this.showThat = !this.showThat;
+  }
 
+  deleteTransaction(){
+    console.log("should delete that transaction");
+  }
   @Input() transaction: Transaction;
   //transaction coming from transaction model
   constructor(private transactionService: TransactionService) { }

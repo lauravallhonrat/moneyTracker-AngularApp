@@ -1,6 +1,20 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {MdSelectModule} from '@angular/material';
+import { 
+  Component, 
+  OnInit, 
+  HostListener, 
+  Directive, 
+  HostBinding, 
+  Output, 
+  Input, 
+  EventEmitter,
+  ViewEncapsulation 
+} from '@angular/core';
 
+import { NgForm } from '@angular/forms';
+import AppComponent from '../../app.component'
+import { TransactionService } from '../../transactions/transactions.service';
+import { Router } from '@angular/router';
+import {Transaction} from '../../transactions/transactions.model';
 
 @Component({
   selector: 'app-overlay-exp', 
@@ -11,6 +25,11 @@ import {MdSelectModule} from '@angular/material';
 // @Input() visible;
 
 export class OverlayExpComponent implements OnInit {
+
+  constructor(
+  	private transactionService: TransactionService,
+  	private router: Router
+  ) { }
 
   public selectedCategory: string;
   public selectedAccount: string;
@@ -27,9 +46,14 @@ export class OverlayExpComponent implements OnInit {
 
   submitForm(myForm) {
     console.log(myForm);
-    setTimeout(function() {
-      this.selectedAmount = "";
-    }, 500);
+    // setTimeout(function() {
+    //   this.selectedAmount = "";
+    // }, 500);
+     this.transactionService.add(myForm)
+      .subscribe((res)=>{
+      console.log("Sending to stream", myForm.value);
+      this.transactionService.transactionAdded(myForm.value);
+    });
     this.close_classExp();
   }
 
@@ -37,22 +61,21 @@ export class OverlayExpComponent implements OnInit {
   // ====== DATA ====== //
 
   accounts = [
-    {value: 'main-0', viewValue: 'Main'},
-    {value: 'cash-1', viewValue: 'Cash'}
+    {value: 'Main', viewValue: 'Main'},
+    {value: 'Cash', viewValue: 'Cash'}
   ];
 
   categories = [
-    {value: '0', viewValue: 'Food'},
-    {value: '1', viewValue: 'Transportation'},
-    {value: '2', viewValue: 'Social'},
-    {value: '3', viewValue: 'Clothing'},
-    {value: '4', viewValue: 'Rent'},
-    {value: '5', viewValue: 'Utilities'},
-    {value: '6', viewValue: 'Health'},
-    {value: '7', viewValue: 'Other'}
+    {value: 'Food', viewValue: 'Food'},
+    {value: 'Transportation', viewValue: 'Transportation'},
+    {value: 'Social', viewValue: 'Social'},
+    {value: 'Clothing', viewValue: 'Clothing'},
+    {value: 'Rent', viewValue: 'Rent'},
+    {value: 'Utilities', viewValue: 'Utilities'},
+    {value: 'Health', viewValue: 'Health'},
+    {value: 'Other', viewValue: 'Other'}
   ];
 
-  constructor() { }
 
   ngOnInit() {
   }
