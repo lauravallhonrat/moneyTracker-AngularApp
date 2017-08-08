@@ -1,6 +1,20 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {MdSelectModule} from '@angular/material';
+import { 
+  Component, 
+  OnInit, 
+  HostListener, 
+  Directive, 
+  HostBinding, 
+  Output, 
+  Input, 
+  EventEmitter,
+  ViewEncapsulation 
+} from '@angular/core';
 
+import { NgForm } from '@angular/forms';
+import AppComponent from '../../app.component'
+import { TransactionService } from '../../transactions/transactions.service';
+import { Router } from '@angular/router';
+import {Transaction} from '../../transactions/transactions.model';
 
 @Component({
   selector: 'app-overlay-exp', 
@@ -8,15 +22,19 @@ import {MdSelectModule} from '@angular/material';
   styleUrls: ['./overlay-exp.component.css']
 })
 
-// @Input() visible;
-
 export class OverlayExpComponent implements OnInit {
+
+  constructor(
+  	private transactionService: TransactionService,
+  	private router: Router
+  ) { }
 
   public selectedCategory: string;
   public selectedAccount: string;
   public selectedAmount: any;
   public selectedDate: any;
   today = new Date();
+  transactions: Transaction[];
 
     toggleVar: false;
   @Output() hide = new EventEmitter<boolean>();
@@ -26,10 +44,10 @@ export class OverlayExpComponent implements OnInit {
   }
 
   submitForm(myForm) {
-    console.log(myForm);
-    setTimeout(function() {
-      this.selectedAmount = "";
-    }, 500);
+  this.transactionService.add(myForm.value).subscribe((res) => {}, (err) => {
+      console.log('error add() not working,check tr.service');
+      
+    });
     this.close_classExp();
   }
 
@@ -58,7 +76,6 @@ export class OverlayExpComponent implements OnInit {
     {value: '<div><i class="fa fa-star" aria-hidden="true"></i></div><div class="cat"><p>&nbsp; Other<p></div>', viewValue: 'Other'}
   ];
 
-  constructor() { }
 
   ngOnInit() {
   }

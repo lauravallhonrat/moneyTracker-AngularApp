@@ -46,41 +46,24 @@ implements OnInit {
   }
 
   submitForm(myForm: NgForm) {
-   
-    console.log(myForm);
-    this.transactionService.add(this.transactions)
-  		.subscribe((res)=>{
-  			console.log(res)
-  			this.router.navigate(['/transactions'])		
-      });
-     
-  	 console.log("Received form", myForm.value.selectedDate, myForm.value.selectedAccount,myForm.value.selectedAmount,myForm.value.selectedCategory);
-    // process form submitting
-    // myForm.reset();
-    //resetThatStuff();
-    // process form submitting
-    //myForm.reset();
-    // close form modal
+    this.transactionService.add(myForm.value).subscribe((res) => {}, (err) => {
+      console.log('error add() not working,check tr.service');
+      
+    });
     this.close_classInc();
   }
   // function resetThatStuff() {
   //   myForm.reset();
   // }
 
-  // constructor (@Host() app: AppComponent) {}
-
   ngOnInit() {
   //   this.selectedDate = new Date();
   }
 
-
-
-
   accounts = [
-    {value: 'main-0', viewValue: 'Main'},
-    {value: 'cash-1', viewValue: 'Cash'}
+    {value: 'Main', viewValue: 'Main'},
+    {value: 'Cash', viewValue: 'Cash'}
   ];
-
 
   categories = [
     {value: '<div><i class="fa fa-cutlery" aria-hidden="true"></i></div><div class="cat"><p>&nbsp; Food<p></div>', viewValue: 'Food'},
@@ -98,6 +81,7 @@ implements OnInit {
     {value: '<div><i class="fa fa-thumbs-up" aria-hidden="true"></i></div><div class="cat"><p>&nbsp; Freelance<p></div>', viewValue: 'Freelance'},
     {value: '<div><i class="fa fa-star" aria-hidden="true"></i></div><div class="cat"><p>&nbsp; Other<p></div>', viewValue: 'Other'}
   ];
+
 
   // reset(form: ngForm){
   //   form.resetForm({ selectedAmount: this.selectedAmount });

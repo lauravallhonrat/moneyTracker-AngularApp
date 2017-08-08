@@ -4,13 +4,3 @@
 body {
     font-family: 'Amaranth', Arial, Helvetica, sans-serif
 }
-
-body,
-html {
-    margin: 0;
-    width: 100%;
-}
-
-html {
-    background-color: #F2FEF1;
-}
