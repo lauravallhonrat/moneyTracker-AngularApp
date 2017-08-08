@@ -1,12 +1,12 @@
-<div class="col-md-8">
-    <p>expenses</p>
+<div class="col-md-6 col-sm-12">
+    <p>YOUR DATA IN A DOUGHNUT</p>
     <div style="display: block">
-        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [colors]="doughnutChartColors" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
     </div>
 </div>
-<div class="col-md-8">
-    <p>incomes</p>
+<div class="col-md-6 col-sm-12">
+    <p>YOUR DATA IN A CHART</p>
     <div style="display: block">
-        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="barChartColors" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
     </div>
 </div>
