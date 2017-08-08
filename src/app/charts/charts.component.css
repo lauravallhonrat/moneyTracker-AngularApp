@@ -1,0 +1,19 @@
+.chart {
+    margin-top: 80px;
+}
+
+p {
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.box {
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+    padding: 20px;
+    width: 100%;
+}
+
+#bot {
+    margin-bottom: 30px;
+}
