@@ -1,11 +1,11 @@
-<div class="col-md-10 col-sm-12">
+<div class="box" id="bot">
     <p>Where your money went</p>
     <div style="display: block">
         <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [colors]="doughnutChartColors" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
     </div>
 </div>
 
-<div class="col-md-10 col-sm-12 chart">
+<div class="box">
     <p>Expenses VS Incomes</p>
     <div style="display: block">
         <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="barChartColors" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
