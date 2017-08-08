@@ -22,9 +22,8 @@ p,
     margin-bottom: 0;
 }
 
-i {
-    margin-top: 4px;
-    margin-right: 5px;
+.cat {
+    padding-left: 5px;
 }
 
 .colour {

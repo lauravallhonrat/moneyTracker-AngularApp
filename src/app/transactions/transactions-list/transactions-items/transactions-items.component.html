@@ -2,19 +2,30 @@
     <div class="colour"></div>
     <div class="bande" (click)=showDelete() [hidden]="showThat">
 
-        <!-- <a href="#" class="clearfix" (click)="onSelected()"> -->
-        <!-- the ngFor allows us to loop through the elmts in transactions - transactions being the name of the array of Transaction in the trans-list.comp -->
-        <!-- <img src="" alt="the image should be here :(" class="img-responsive icon" style="max-height: 30px"> -->
-        <!-- calling this with item.nameofthepropfromtrans-list.comp -->
-
-
-
-        <div class="category">
-            <p class="category">
-                <i class="fa 
-        {{transaction.icon}}" aria-hidden="true"></i>{{transaction.category}}
+        <!-- <div class="category">
+            <p class="category"><span></span>
+                <i class="fa {{transaction.icon}}" aria-hidden="true"></i> {{transaction.category}}
             </p>
+        </div> -->
+
+        <div class="category" [innerHTML]="transaction.category">
+
         </div>
+
+        <!-- <div class="category">
+            <p class="category fa-default-children" style="margin-top: 3px;" [innerHTML]="transaction.category">
+            </p>
+        </div> -->
+
+
+        <!-- <script type="text/javascript">
+            // self executing function here
+            (function() {
+                console.log("hdeiuhf");
+                var icon = whichIcon(Other);
+                document.getElementsByTagName('span')[0].innerHTML = icon;
+            })();
+        </script> -->
 
         <div class="amount">
             <p class="amount">{{transaction.amount}}</p>
@@ -23,10 +34,10 @@
 
         <p class="hide-this ">{{transaction.date}}</p>
         <p class="hide-this ">{{transaction.account}}</p>
-
         <pre class="hide-this ">{{transaction.transactionType}}</pre>
 
     </div>
+
     <div class="bande" [hidden]="deleteThat">
         <div class="bande2">
             <p>Delete?</p>
@@ -36,6 +47,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 <div class="big-box fufu row"></div>

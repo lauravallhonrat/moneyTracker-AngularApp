@@ -17,15 +17,16 @@ constructor(
 //getThoseTransactions = new EventEmitter<Transaction>();
 
 getTransactions() {
-    // return this.http.get('http://localhost:3000/transactions')
-    //     .map((res) => res.json());
-	return this.http.get('http://localhost:3000/transactions')
-        .map((response) => {
-            return (<any>response.json()).map(item => {
-                return new Transaction(item.category, item.amount, item.date,item.account,item.transactionType, item.icon);
-            }); // ORDER MATTERS
-        });
+    return this.http.get('http://localhost:3000/transactions')
+        .map((res) => res.json());
+	// return this.http.get('http://localhost:3000/transactions')
+    //     .map((response) => {
+    //         return (<any>response.json()).map(item => {
+    //             return new Transaction(item.category, item.amount, item.date,item.account,item.transactionType, item.icon);
+    //         }); // ORDER MATTERS
+	//     });
 }
+
 getTransaction(id) {
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
   	let options = new RequestOptions({ headers: headers });
