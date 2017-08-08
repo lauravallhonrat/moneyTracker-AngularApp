@@ -131,8 +131,16 @@ i {
     background-color: #333;
 }
 
+.charts {
+    margin-bottom: 60px;
+}
 
-/* .transactions {
-    display: flex;
-    margin-bottom: 40px;
-} */
+@media only screen and (min-width: 768px) {
+    .charts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+}

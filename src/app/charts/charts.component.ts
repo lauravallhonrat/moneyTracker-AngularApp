@@ -57,8 +57,7 @@ transactions: Transaction[];
 
 
    // ============= DONUT ============== //
-  public doughnutChartLabels:string[] = ['food','utilities','clothes', "something","ufie","hfire", "7hcdi", "8hudiw", "9fioee", "10ufivehe"];
-  public doughnutChartData:number[] = [30,50,25,75,45,32,89,22,36,64];
+  
  
   public doughnutChartType:string = 'doughnut';
  
@@ -75,6 +74,9 @@ transactions: Transaction[];
     // pointHoverBorderColor:["#333", "#333","#333","#333","#333","#333","#333","#333","#333","#333"]
   }];
  
+  public doughnutChartLabels:string[] = ['food','utilities','clothes', "something","ufie","hfire", "7hcdi", "8hudiw", "9fioee", "10ufivehe"];
+  public doughnutChartData:number[] = [30,50,25,75,45,32,89,22,36,64];
+
   public chartHovered(e:any):void {
     console.log(e);
   }

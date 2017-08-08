@@ -5,7 +5,7 @@
 
             <div class="balance">
                 <h3>Your balance</h3>
-                <h1>{{transactionService.getBalance()}} <i class="fa fa-pencil" aria-hidden="true"></i></h1>
+                <h1>{{transactionService.getBalance()}}</h1>
             </div>
 
             <div class="button-wrap example-sidenav-content">
@@ -33,19 +33,15 @@
             <app-budgets-list></app-budgets-list>
         </div> -->
 
-        <div class="col-md-12 col-xs-12 charts">
-            <app-charts></app-charts>
+        <div class="col-md-12 col-xs-12">
+            <app-charts class="charts"></app-charts>
         </div>
 
         <div class="row">
             <!-- assign loaded overlay event to expense in app component -->
-
             <app-overlay-exp (hide)='onHide($event)' [hidden]="overlayIsHidden"></app-overlay-exp>
-
             <!-- expense is a keyword coming from header html -->
-
             <app-overlay-inc (hide)='onHide($event)' [hidden]="overlayIncIsHidden"></app-overlay-inc>
-
         </div>
 
 
