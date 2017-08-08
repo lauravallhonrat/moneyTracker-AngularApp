@@ -22,9 +22,7 @@ export class TransactionsItemsComponent implements OnInit {
     this.showThat = !this.showThat;
   }
 
-  deleteTransaction(){
-    console.log("should delete that transaction");
-  }
+  
   @Input() transaction: Transaction;
   //transaction coming from transaction model
   constructor(private transactionService: TransactionService) { }
@@ -35,6 +33,15 @@ export class TransactionsItemsComponent implements OnInit {
   onSelected(){
     //this.transactionSelected.emit();//call emit when emitEmitter is used
     //this.transactionService.getThoseTransactions.emit(this.transaction);
+  }
+  deleteTransaction(){
+    console.log('transaction',this.transaction);
+    
+     this.transactionService.remove(this.transaction)
+      .subscribe((response) => {}, (err) => {
+
+        console.log('error on tr.items, remove not working!')
+      });
   }
 
   // whichIcon(category) {
