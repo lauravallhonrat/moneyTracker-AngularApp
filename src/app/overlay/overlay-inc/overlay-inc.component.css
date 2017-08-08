@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .income-block {
     background-color: rgba(23, 154, 108, 1);
     padding: 20px;
@@ -9,6 +10,51 @@
     animation-name: comeHither;
     animation-duration: 0.8s;
     color: #fff;
+=======
+@media only screen and (min-width: 768px) {
+    .income-block {
+        background: linear-gradient(to bottom right, rgb(173, 215, 109), rgb(91, 181, 108));
+        padding: 20px;
+        width: 100vw;
+        position: fixed;
+        bottom: -20px;
+        left: 0px;
+        height: 50vh;
+        animation-name: comeHither;
+        animation-duration: 0.8s;
+        color: #fff;
+    }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 767px) {
+    .income-block {
+        background: linear-gradient(to bottom right, rgb(173, 215, 109), rgb(91, 181, 108));
+        padding: 20px;
+        width: 100vw;
+        position: fixed;
+        bottom: -20px;
+        left: 0px;
+        height: 80vh;
+        overflow-y: scroll;
+        animation-name: comeHither;
+        animation-duration: 0.8s;
+        color: #fff;
+    }
+}
+
+@media only screen and (min-width: 100px)and (max-width: 767px) {
+    .empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .empty {
+        display: initial;
+    }
+>>>>>>> 104fae0d5058dba374ee160f349c03e68c6c7a27
 }
 
 .title {

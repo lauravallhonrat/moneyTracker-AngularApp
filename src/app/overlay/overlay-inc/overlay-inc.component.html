@@ -11,26 +11,26 @@
                     <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
                 </md-input-container>
             </div> -->
+            <div class="empty">
+                <div class="col-sm-6 inputbox">
+                    <!-- <div class="center-that"> -->
+                    <label for="Amount">Amount</label>
+                    <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
+                    <!-- </div> -->
+                </div>
 
-            <div class="col-sm-6 inputbox">
-                <!-- <div class="center-that"> -->
-                <label for="Amount">Amount</label>
-                <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
-                <!-- </div> -->
-            </div>
 
-
-            <!-- <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                 <md-select placeholder="Which Category" [(ngModel)]="selectedCategory" name="category" required>
                     <md-option *ngFor="let category of categoriesInc" [value]="category.value">
                         {{category.viewValue}}
                     </md-option>
                 </md-select>
             </div> -->
-            <div class="col-sm-6 inputbox">
-                <!-- <div class="center-that"> -->
-                <label for="sel1">Category</label>
-                <select class="form-control" id="sel1" [(ngModel)]="selectedCategory" name="category" required placeholder="Which Category?">
+                <div class="col-sm-6 inputbox">
+                    <!-- <div class="center-that"> -->
+                    <label for="sel1">Category</label>
+                    <select class="form-control" id="sel1" [(ngModel)]="selectedCategory" name="category" required placeholder="Which Category?">
                     
                 <option value="" selected disabled>Which category? </option>
                 <option *ngFor="let category of categoriesInc" [value]="category.value" selected>
@@ -38,42 +38,42 @@
                     </option>
                     <span class="caret"></span>
             </select>
-                <!-- </div> -->
-            </div>
+                    <!-- </div> -->
+                </div>
 
-            <!-- <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                 <md-input-container>
                     <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" mdDatepicker name="selectedDate" [(ngModel)]="selectedDate">
                     <button mdSuffix [mdDatepickerToggle]="picker"></button>
                 </md-input-container>
                 <md-datepicker #picker></md-datepicker>
             </div> -->
-            <div class="col-sm-6 inputbox relative">
-                <!-- <div class="center-that"> -->
+                <div class="col-sm-6 inputbox relative">
+                    <!-- <div class="center-that"> -->
 
-                <label for="Date">Date</label>
-                <div class="date">
-                    <input mdInput [mdDatepicker]="picker" mdDatepicker name="selectedDate" [(ngModel)]="selectedDate">
-                    <div class="input-group-btn center-that">
-                        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                    <label for="Date">Date</label>
+                    <div class="date">
+                        <input mdInput [mdDatepicker]="picker" mdDatepicker name="selectedDate" [(ngModel)]="selectedDate">
+                        <div class="input-group-btn center-that">
+                            <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                        </div>
+                        <md-datepicker #picker></md-datepicker>
                     </div>
-                    <md-datepicker #picker></md-datepicker>
+
+                    <!-- </div> -->
                 </div>
 
-                <!-- </div> -->
-            </div>
-
-            <!-- <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                 <md-select placeholder="Which Account" [(ngModel)]="selectedAccount" name="account">
                     <md-option *ngFor="let account of accounts" [value]="account.value">
                         {{account.viewValue}}
                     </md-option>
                 </md-select>
             </div>-->
-            <div class="col-sm-6 inputbox">
-                <!-- <div class="center-that"> -->
-                <label for="sel2">Account</label>
-                <select class="form-control" id="sel2" [(ngModel)]="selectedAccount" name="account" required placeholder="Which Category?">
+                <div class="col-sm-6 inputbox">
+                    <!-- <div class="center-that"> -->
+                    <label for="sel2">Account</label>
+                    <select class="form-control" id="sel2" [(ngModel)]="selectedAccount" name="account" required placeholder="Which Category?">
                     
                 <option value="" selected disabled>Which account?? </option>
                 <option *ngFor="let account of accounts" [value]="account.value">
@@ -81,7 +81,8 @@
                 </option>
                 <span class="caret"></span>
                 </select>
-                <!-- </div> -->
+                    <!-- </div> -->
+                </div>
             </div>
 
 
