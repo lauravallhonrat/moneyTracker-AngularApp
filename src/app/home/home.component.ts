@@ -1,6 +1,7 @@
 import { Component,OnInit, EventEmitter,Output, Input } from '@angular/core';
 import { SessionService } from '../session.service';
 import { Router } from '@angular/router';
+import { TransactionService } from '../transactions/transactions.service';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class HomeComponent implements OnInit {
   @Output() featureSelected = new EventEmitter<string>();
 constructor(
   	private session: SessionService,
-  	private router: Router,
+    private router: Router,
+    private transactionService: TransactionService
   ) { }
   ngOnInit() {
   }
@@ -32,10 +34,7 @@ constructor(
   onSelect(feature : string){
     this.featureSelected.emit(feature);
   }
-  // onNavigate(overlay: string){
-  //   this.loadedOverlay = overlay;
-  // }
-
+ 
   onHide() {
     this.overlayIncIsHidden = true;
     this.overlayIsHidden = true;

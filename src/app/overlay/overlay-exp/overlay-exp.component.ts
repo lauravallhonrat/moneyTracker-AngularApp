@@ -22,8 +22,6 @@ import {Transaction} from '../../transactions/transactions.model';
   styleUrls: ['./overlay-exp.component.css']
 })
 
-// @Input() visible;
-
 export class OverlayExpComponent implements OnInit {
 
   constructor(
@@ -36,6 +34,7 @@ export class OverlayExpComponent implements OnInit {
   public selectedAmount: any;
   public selectedDate: any;
   today = new Date();
+  transactions: Transaction[];
 
     toggleVar: false;
   @Output() hide = new EventEmitter<boolean>();
@@ -45,14 +44,9 @@ export class OverlayExpComponent implements OnInit {
   }
 
   submitForm(myForm) {
-    console.log(myForm);
-    // setTimeout(function() {
-    //   this.selectedAmount = "";
-    // }, 500);
-     this.transactionService.add(myForm)
-      .subscribe((res)=>{
-      console.log("Sending to stream", myForm.value);
-      this.transactionService.transactionAdded(myForm.value);
+  this.transactionService.add(myForm.value).subscribe((res) => {}, (err) => {
+      console.log('error add() not working,check tr.service');
+      
     });
     this.close_classExp();
   }

@@ -5,18 +5,29 @@ import { Router, CanActivate } from '@angular/router';
 import { SessionService } from '../session.service';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Rx';
-import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class TransactionService {
 
-	public transactionSubject;
+	private transactions: Array<any> = [];
+	private balance = 0;
 
 constructor(
 	private http: Http,
 	private session: SessionService
-) { 
-	this.transactionSubject = new Subject();
+) {
+}
+
+get(): Array<any> {
+	   return this.transactions; 
+}
+
+getBalance(): number {
+	return this.balance;
+}
+
+calculcateBalance() {
+
 }
 
 getTransactions() {
@@ -25,27 +36,21 @@ getTransactions() {
 	  
 	return this.http.get(`http://localhost:3000/api/transactions`, options)
         .map((response) => {
-		return response.json();
+		this.transactions = response.json();
 		
             // return (<any>response.json()).map(item => {
             //     return new Transaction(item.category, item.amount, item.date,item.account,item.transactionType, item.icon);
             // }); // ORDER MATTERS
         });
 }
-// getTransaction(id) {
-//   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
-//   	let options = new RequestOptions({ headers: headers });
-//   	return this.http.get(`http://localhost:3000/transactions/${id}`, options)
-//   		.map((res) => res.json());
-//   }
+
 
 add(transaction) {
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
 	let options = new RequestOptions({ headers: headers });
 	return this.http.post(`http://localhost:3000/api/transactions`, transaction, options)
 	  .map(res => {
-		  this.transactionAdded(transaction);
-		  return res.json();
+		  this.transactions.push(res.json());
 	  });
   }
 
@@ -62,23 +67,5 @@ remove(id) {
   	return this.http.delete(`http://localhost:3000/api/transactions/${id}`, options)
   		.map( (res) => res.json());
   }
-
-transactionAdded(obj: any) {
-	this.transactionSubject.next(obj);
-}
-
-getTransactionAdded(): Observable<any> {
-	return this.transactionSubject.asObservable();
-}
-
-// addTransaction(transaction:Transaction){
-//     this.transactions.push(transaction);
-// }
-
-// getSomeTransaction() {
-//     return this.http.get('http://http://localhost:3000/transactions')
-//       .map((res) => res.json());
-//   }
-
 
 }

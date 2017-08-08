@@ -46,25 +46,15 @@ implements OnInit {
   }
 
   submitForm(myForm: NgForm) {
-   //let user = JSON.parse(localStorage.getItem("user"))
-    this.transactionService.add(myForm.value).subscribe((res) => {
-    //   //  this.router.navigate(['/transactions'])		//fix this refresh transactions component
+    this.transactionService.add(myForm.value).subscribe((res) => {}, (err) => {
+      console.log('error add() not working,check tr.service');
+      
     });
-    
-  	//  console.log("Received form", myForm.value.selectedDate, myForm.value.selectedAccount,myForm.value.selectedAmount,myForm.value.selectedCategory);
-    // process form submitting
-    // myForm.reset();
-    //resetThatStuff();
-    // process form submitting
-    //myForm.reset();
-    // close form modal
     this.close_classInc();
   }
   // function resetThatStuff() {
   //   myForm.reset();
   // }
-
-  // constructor (@Host() app: AppComponent) {}
 
   ngOnInit() {
   //   this.selectedDate = new Date();

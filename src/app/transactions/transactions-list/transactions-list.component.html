@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <!-- add each item html on transaction items html component -->
-        <app-transactions-items *ngFor="let itemEl of transactions" [transaction]="itemEl"></app-transactions-items>
+        <app-transactions-items *ngFor="let itemEl of transactionService.get()" [transaction]="itemEl"></app-transactions-items>
         <!-- transaction is a property in the component we're placing this on (transaction-items ts file) -->
         <!-- ngFor added so it displays items, in items component html file-->
         <!-- eventEmitter coming from the items component ts file -->

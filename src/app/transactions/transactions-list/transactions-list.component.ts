@@ -12,26 +12,13 @@ import {TransactionService} from '../transactions.service'
   styleUrls: ['./transactions-list.component.css']
 })
 export class TransactionsListComponent implements OnInit {
-
-  transactionAddedS: Subscription;
-
-  transactions: Transaction[];
-  // transactions is a given name, Transaction[] refers to the Transaction class name from the transaction.model.ts
-  // we create a new Transaction with the different elements we defined in the model.
-
   constructor(private transactionService: TransactionService) {
-     
-    this.transactionAddedS = this.transactionService.getTransactionAdded().subscribe(
-      data => {
-        this.transactions.push(data)
-      });
   }
-
 
   ngOnInit() {
     this.transactionService.getTransactions()
-      .subscribe((response) => {
-        this.transactions = response;
+      .subscribe((response) => {}, (err) => {
+        console.log('error on tr.list, get transactions not working!')
       });
 
   }
