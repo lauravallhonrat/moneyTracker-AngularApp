@@ -8,6 +8,15 @@
     font-family: 'Amaranth', Arial, Helvetica, sans-serif;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.thewholechart {
+    margin-left: 8%;
+}
+
 .banner {
     position: relative;
     width: 100vw;
