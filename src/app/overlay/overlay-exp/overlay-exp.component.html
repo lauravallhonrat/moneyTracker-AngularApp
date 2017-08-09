@@ -15,7 +15,7 @@
                 <div class="col-sm-6 inputbox">
                     <!-- <div class="center-that"> -->
                     <label for="Amount">Amount</label>
-                    <input type="number" mdInput placeholder="Amount" [(ngModel)]="selectedAmount" required name="amount">
+                    <input type="number" mdInput [(ngModel)]="selectedAmount" required name="amount" value="-">
                     <!-- </div> -->
                 </div>
 
@@ -93,7 +93,7 @@
 
 
         <div class="alert alert-danger" role="alert" [hidden]="errorMessage">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>You need to fill all the fields.
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>You need to fill all the fields. <span (click)="errorMessageShown()" id="understood">Understood</span>
         </div>
 
     </div>

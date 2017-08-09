@@ -177,6 +177,19 @@ option {
     }
 }
 
+#understood {
+    text-decoration: underline;
+    float: right;
+}
+
+.alert-danger {
+    padding: 10px;
+    margin-top: 10px;
+    color: #ffffff;
+    background-color: #7d2422;
+    border-color: transparent;
+}
+
 
 /* ========== ANGULAR HELL =========== */
 
