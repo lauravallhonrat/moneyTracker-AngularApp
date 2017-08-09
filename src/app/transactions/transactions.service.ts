@@ -11,6 +11,7 @@ export class TransactionService {
 
 	private transactions: Array<any> = [];
 	private balance = 0;
+	private BASE_URL: string = 'http://localhost:3000';
 
 constructor(
 	private http: Http,
@@ -40,8 +41,8 @@ this.transactions.forEach((transaction)=>{
 getTransactions() {
 	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
 	let options = new RequestOptions({ headers: headers });
-	  
-	return this.http.get(`http://localhost:3000/api/transactions`, options)
+
+	return this.http.get(`${this.BASE_URL}/api/transactions`, options)
         .map((response) => {
 						  console.log("THE good RESPONSE", response);
 
@@ -57,7 +58,7 @@ getTransactions() {
 add(transaction) {
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
 	let options = new RequestOptions({ headers: headers });
-	return this.http.post(`http://localhost:3000/api/transactions`, transaction, options)
+	return this.http.post(`${this.BASE_URL}/api/transactions`, transaction, options)
 	  .map(res => {
 		  this.transactions.push(res.json());
 			this.calculateBalance();
@@ -67,7 +68,7 @@ add(transaction) {
 edit(transaction) {
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
   	let options = new RequestOptions({ headers: headers });
-  	return this.http.put(`http://localhost:3000/api/transactions/${transaction._id}`, transaction, options)
+  	return this.http.put(`${this.BASE_URL}/api/transactions/${transaction._id}`, transaction, options)
   		.map( (res) => res.json());
   }
 
@@ -75,7 +76,7 @@ remove(transaction) {
 
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
   	let options = new RequestOptions({ headers: headers });
-  	return this.http.delete(`http://localhost:3000/api/transactions/${transaction._id}`, options)
+  	return this.http.delete(`${this.BASE_URL}/api/transactions/${transaction._id}`, options)
   		.map((response) => {
 			  console.log("THE RESPONSE", response);
 			  
