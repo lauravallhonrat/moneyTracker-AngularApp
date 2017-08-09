@@ -20,22 +20,18 @@ constructor(
 }
 
 get(): Array<any> {
-	console.log("transactions",this.transactions);
-	   return this.transactions; 
+	return this.transactions; 
 }
 
 getBalance(): number {
-	console.log("transactionsGetBalance()",this.transactions);
-	return this.balance
+	return this.balance;
 }
 
 calculateBalance() {
 	this.balance = 0;
-this.transactions.forEach((transaction)=>{
-			this.balance = this.balance + transaction.amount
-			console.log("balance inside", this.balance);
-			
-		})
+	this.transactions.forEach((transaction)=>{
+	this.balance = this.balance + transaction.amount;
+		});
 }
 
 getTransactions() {
