@@ -21,7 +21,6 @@ export class ChartsComponent implements OnInit {
   chartsHidden : boolean = true;
 
 
-
   ngOnInit() {
     let user = JSON.parse(localStorage.getItem("user"))
     // this.transactionService.getTransactions(user)
@@ -70,17 +69,6 @@ export class ChartsComponent implements OnInit {
     console.log("DOUGHNUT", this.doughnutChartData, this.doughnutChartLabels);
     
   }
-
-  // theNames = [];
-  // theAmounts = [];
-  // emptyObj = {};
-
-  // getThat() {
-  // this.theNames = Object.keys(obj)
-  // this.theAmounts =  Object.keys(obj).map(key)=> {
-  //   return object[key];
-  // }
-
 
 
   // ============= BAR CHART ============== //
@@ -145,9 +133,6 @@ export class ChartsComponent implements OnInit {
   }
 
 }
-
-
-// ============= FOX ON EMPTY ============== //
 
   
 
