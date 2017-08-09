@@ -56,8 +56,17 @@
             <p class="account-message">
                 You already have an account? <a [routerLink]="['/login']">Login</a>
             </p>
+            <script>
+                $(".tiny").click(function() {
+                    console.log("hfeihreighre");
+                    $("#yes").show();
+                    $("#yes").fadeIn("slow", 1);
+                });
+            </script>
 
         </div>
     </div>
 
 </div>
+
+<img src="http://localhost:3000/images/fox-ye.png" alt="another fox" id="yes">

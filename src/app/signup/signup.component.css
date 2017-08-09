@@ -210,10 +210,18 @@ form>.alert {
 label,
 .message {
     color: #333;
+    margin-bottom: 0;
 }
 
 hr {
     border-color: #acbbb0;
+}
+
+#yes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
 }
 
 
