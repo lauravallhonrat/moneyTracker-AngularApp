@@ -15,6 +15,13 @@ export class ChartsComponent implements OnInit {
   tempArr = [];
   charObj = {};
   totalSum = 0;
+
+
+  foxHidden : boolean = false;
+  chartsHidden : boolean = true;
+
+
+
   ngOnInit() {
     let user = JSON.parse(localStorage.getItem("user"))
     // this.transactionService.getTransactions(user)
@@ -32,9 +39,22 @@ export class ChartsComponent implements OnInit {
       this.getCategoryNames()
       })
 
+// ==================================== //
+// ============ FOX SHOWN ============= //
 
+    // if (this.charObj["labels"][0].length !== 0) {
+    //   this.foxHidden = true;
+    //   this.chartsHidden = false;
+    //   console.log("CHARRRRRRRRRRRRRRRRRRRRRRRT MONTREE");
+    
+    // } else {
+    //   this.foxHidden = false;
+    //   this.chartsHidden = true;
+    //   console.log("RENAAAAAAAAAAAAAAAAAAAAAAARD MONTRE");
+    // }
 
-
+  // ============ FOX SHOWN ============= //
+  // ==================================== //
 
   }
 
@@ -125,3 +145,10 @@ export class ChartsComponent implements OnInit {
   }
 
 }
+
+
+// ============= FOX ON EMPTY ============== //
+
+  
+
+  

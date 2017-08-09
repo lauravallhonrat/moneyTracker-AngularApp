@@ -1,9 +1,25 @@
 <div class="box" id="bot">
     <p>Where your money went</p>
-    <div style="display: block">
+    <div style="display: block" [hidden]="chartsHidden">
         <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [colors]="doughnutChartColors" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
     </div>
+
+
+
+    <div class="fox-comp" [hidden]="foxHidden">
+
+        <div class="bubblebox">
+            <div class="bubble">
+                <p>Oh no there are no transactions. <br> If you want to see them, please reload...</p>
+            </div>
+        </div>
+        <img src="http://localhost:3000/images/fox-cry.png" alt="the fox should be here">
+    </div>
+
+
 </div>
+
+
 
 <!-- CURRENTLY the barchart makes no sense as we can't grab time or add the icome vs expense -->
 
