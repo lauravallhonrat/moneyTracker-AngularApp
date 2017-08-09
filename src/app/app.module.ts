@@ -17,7 +17,6 @@ import { BudgetsListComponent } from './budgets/budgets-list/budgets-list.compon
 import { BudgetsItemsComponent } from './budgets/budgets-list/budgets-items/budgets-items.component';
 import { FoxComponent } from './fox/fox.component';
 import { ChartsListComponent } from './charts/charts-list/charts-list.component';
-import { ChartsItemsComponent } from './charts/charts-list/charts-items/charts-items.component';
 import { OverlayExpComponent } from './overlay/overlay-exp/overlay-exp.component';
 import { OverlayIncComponent } from './overlay/overlay-inc/overlay-inc.component';
 import { TransactionsPopUpComponent } from './transactions/transactions-pop-up/transactions-pop-up.component';
@@ -54,7 +53,6 @@ const appRoutes: Routes = [
     BudgetsItemsComponent,
     FoxComponent,
     ChartsListComponent,
-    ChartsItemsComponent,
     OverlayExpComponent,
     OverlayIncComponent,
     TransactionsPopUpComponent,

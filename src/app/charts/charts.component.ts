@@ -11,13 +11,44 @@ export class ChartsComponent implements OnInit {
   constructor(private transactionService: TransactionService) { }
 @Input() transaction: Transaction;
 transactions: Transaction[];
+transactionsName = [];
   ngOnInit() {
         let user = JSON.parse(localStorage.getItem("user"))
     // this.transactionService.getTransactions(user)
     //   .subscribe((_transactions) => {
     //     this.transactions = _transactions;
     //   });
+
+
+      // this.transactions = this.transactionService.get()
+      this.transactionService.getTransactions()
+      .subscribe(res => {this.transactions = this.transactionService.get()
+          this.getCategoryNames();
+        })
+
+      
+      
+
+
   }
+
+
+  getCategoryNames(){
+    this.transactionsName = this.transactions.map((transaction)=>{
+      console.log(transaction.category[0].split("&nbsp; ")[1].split("<p>")[0])
+    })
+  }
+
+  // theNames = [];
+  // theAmounts = [];
+  // emptyObj = {};
+
+  // getThat() {
+  // this.theNames = Object.keys(obj)
+  // this.theAmounts =  Object.keys(obj).map(key)=> {
+  //   return object[key];
+  // }
+
 
 
 // ============= BAR CHART ============== //
@@ -31,8 +62,8 @@ transactions: Transaction[];
   public barChartLegend:boolean = true;
  
   public barChartData:any[] = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Income'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Expense'}
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Expense'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Income'}
   ];
 
   public barChartColors: any[] = [
@@ -74,7 +105,7 @@ transactions: Transaction[];
     // pointHoverBorderColor:["#333", "#333","#333","#333","#333","#333","#333","#333","#333","#333"]
   }];
  
-  public doughnutChartLabels:string[] = ['food','utilities','clothes', "something","ufie","hfire", "7hcdi", "8hudiw", "9fioee", "10ufivehe"];
+  public doughnutChartLabels:string[] = ['food','food','food', "food","ufie","hfire", "7hcdi", "8hudiw", "9fioee", "10ufivehe"];
   public doughnutChartData:number[] = [30,50,25,75,45,32,89,22,36,64];
 
   public chartHovered(e:any):void {

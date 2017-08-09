@@ -79,6 +79,5 @@ remove(transaction) {
 		this.transactions = response.json();
 		this.calculateBalance();
 		});
-}
-
+	}
 }

@@ -1,38 +1,72 @@
 <div class="mainbox">
 
-    <div class="bubblebox">
-        <div class="bubble">
-            <p>Nice to meet you. I'm here to help you with your finances. Let's do this!</p>
+    <div class="fox-stuff">
+        <div class="bubblebox">
+            <div class="bubble">
+                <p>Nice to meet you. I'm here to help you with your finances. Let's do this!</p>
+            </div>
         </div>
-    </div>
-    <div class="bubblebox2">
-        <img src="http://localhost:3000/images/queue.png" id="queue" alt="queue bulle">
-    </div>
+        <div class="bubblebox2">
+            <img src="http://localhost:3000/images/queue.png" id="queue" alt="queue bulle">
+        </div>
 
-    <div class="fox">
-        <img src="http://localhost:3000/images/fox-hi.png" alt="the fox should be here">
+        <div class="fox">
+            <img src="http://localhost:3000/images/fox-hi.png" alt="the fox should be here">
+        </div>
     </div>
 
     <div class="login">
         <div class="logbox">
             <p class="title">SIGN UP</p>
             <form (ngSubmit)="submitSignup()" #myForm="ngForm">
+
                 <div class="form-group">
                     <label for="InputUsername">Email Address</label>
                     <input type="email" class="form-control" id="InputUsername" placeholder="Email Address" [(ngModel)]="user.username" name="username">
                 </div>
+
                 <div class="form-group">
                     <label for="InputPassword">Password</label>
                     <input type="password" class="form-control" id="InputPassword" placeholder="Password" [(ngModel)]="user.password" name="password">
                 </div>
+                <hr>
+                <div class="form-group">
+                    <div class="bubblebox smaller">
+                        <div class="bubble" id="smaller">
+                            <p class="message">To get started we need your initial balance</p>
+                        </div>
+                    </div>
+                    <div class="bubblebox22">
+                        <img src="http://localhost:3000/images/queue.png" id="queue" alt="queue bulle">
+                    </div>
+
+                    <div class="together">
+
+                        <img src="http://localhost:3000/images/fox-boom.png" alt="another fox" class="tiny">
+                        <div class="da-box">
+                            <label for="InputPassword">Initial balance</label>
+                            <input type="number" class="form-control" id="balance" placeholder="Initial balance" [(ngModel)]="user.balance" name="balance">
+                        </div>
+                    </div>
+                </div>
+
                 <div *ngIf="error" class="alert alert-danger" role="alert">{{ error.statusText }}</div>
                 <button type="submit" class="btn butts2">SIGN UP</button>
             </form>
             <p class="account-message">
                 You already have an account? <a [routerLink]="['/login']">Login</a>
             </p>
+            <script>
+                $(".tiny").click(function() {
+                    console.log("hfeihreighre");
+                    $("#yes").show();
+                    $("#yes").fadeIn("slow", 1);
+                });
+            </script>
 
         </div>
     </div>
 
 </div>
+
+<img src="http://localhost:3000/images/fox-ye.png" alt="another fox" id="yes">

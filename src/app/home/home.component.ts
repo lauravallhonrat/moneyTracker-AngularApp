@@ -59,4 +59,29 @@ constructor(
     this.overlayIsHidden = true;
   }
 
+  foxyes : boolean = true;
+
+  onHover() {
+    this.foxyes = !this.foxyes;
+    // const el = document.querySelector('img');
+    // if (el.classList.contains('is-paused')){
+    // el.classList.remove('is-paused');
+  }
+  
+  onLeave() {
+    this.foxyes = !this.foxyes;
+  }
+
+  foxoh : boolean = true;
+
+  onHoverOh() {
+    this.foxoh = !this.foxoh;
+  }
+  
+  onLeaveOh() {
+    this.foxoh = !this.foxoh;
+  }
+
+  
+
 }

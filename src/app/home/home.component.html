@@ -8,11 +8,14 @@
                 <h1>{{transactionService.getBalance()}}</h1>
             </div>
 
+            <img src="http://localhost:3000/images/fox-ye.png" alt="fox yes" [hidden]="foxyes" class="is-paused">
+            <img src="http://localhost:3000/images/fox-oh.png" alt="fox oh" [hidden]="foxoh" class="is-paused" id="oh">
+
             <div class="button-wrap example-sidenav-content">
 
-                <button type="submit" class="btn btn-exp" (click)="toggle_class()">EXPENSE</button>
+                <button type="submit" class="btn btn-exp" (click)="toggle_class()" on-mouseover='onHoverOh()' on-mouseleave='onLeaveOh()'>EXPENSE</button>
 
-                <button type="submit " class="btn btn-inc" (click)="toggle_classInc()">INCOME</button>
+                <button type="submit " class="btn btn-inc" (click)="toggle_classInc()" on-mouseover='onHover()' on-mouseleave='onLeave()'>INCOME</button>
 
             </div>
         </div>
@@ -29,18 +32,14 @@
             <app-transactions></app-transactions>
         </div>
 
-        <!-- <div class="col-md-4 col-xs-12 budgets">
-            <app-budgets-list></app-budgets-list>
-        </div> -->
-
         <div class="thewholechart col-md-10">
             <app-charts class="charts"></app-charts>
         </div>
 
         <div class="row">
-            <!-- assign loaded overlay event to expense in app component -->
+
             <app-overlay-exp (hide)='onHide($event)' [hidden]="overlayIsHidden"></app-overlay-exp>
-            <!-- expense is a keyword coming from header html -->
+
             <app-overlay-inc (hide)='onHide($event)' [hidden]="overlayIncIsHidden"></app-overlay-inc>
         </div>
 
