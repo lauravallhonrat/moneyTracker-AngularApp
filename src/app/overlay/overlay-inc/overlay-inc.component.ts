@@ -41,7 +41,14 @@ export class OverlayIncComponent
   @Output() hide = new EventEmitter<boolean>();
 
   close_classInc() {
+    
+    setTimeout(function() {
+      this.errorMessage = true;
+    
+    }, 1000);
     this.hide.emit(this.toggleVar);
+    
+    // I want to make the error message disappear if it was there and I close the exp overlay
   }
 
   submitForm(myForm: NgForm) {
@@ -50,10 +57,26 @@ export class OverlayIncComponent
       this.transactionService.add(myForm.value).subscribe((res) => { }, (err) => {
         console.log('error add() not working,check tr.service');
       });
+      // I HAVE ADDED THIS HERE!
+      myForm.resetForm();
+      console.log('reset from submit', myForm.value);
+      this.close_classInc();
     }
-    myForm.resetForm();
-    console.log('reset from submit', myForm.value);
-    this.close_classInc();
+
+    // else statement for error on the way
+    else {
+      this.errorMessageShown();
+    }
+    // THIS STUFF IS ORIGINALLY HERE FROM LAURA
+    // myForm.resetForm();
+    // console.log('reset from submit', myForm.value);
+    // this.close_classExp();
+  }
+
+  errorMessage : boolean=true;
+
+  errorMessageShown() {
+    this.errorMessage = !this.errorMessage;
   }
 
 
