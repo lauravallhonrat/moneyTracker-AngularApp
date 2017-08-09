@@ -19,6 +19,25 @@ body {
     padding-top: 20px;
 }
 
+@media only screen and (min-width: 768px) {
+    .mainbox {
+        /* background: linear-gradient(135deg, #179a6c) 0%, #aed86d no-repeat; */
+        background: linear-gradient(to bottom right, rgba(23, 154, 108, 1), rgba(174, 215, 109, 1)) no-repeat;
+        height: 100vh;
+        color: #fff;
+        min-height: 800px;
+        margin: 0;
+        padding: 0;
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .login {
+        margin-left: 20px;
+    }
+}
+
 .butts2 {
     color: #fff;
     background-color: #FF8039;

@@ -19,12 +19,10 @@ constructor(
 }
 
 get(): Array<any> {
-	console.log("transactions",this.transactions);
 	   return this.transactions; 
 }
 
 getBalance(): number {
-	console.log("transactionsGetBalance()",this.transactions);
 	return this.balance
 }
 
