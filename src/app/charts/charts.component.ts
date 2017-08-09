@@ -12,6 +12,9 @@ export class ChartsComponent implements OnInit {
 @Input() transaction: Transaction;
 transactions: Transaction[];
 transactionsName = [];
+tempArr = [];
+charObj = {};
+totalSum = 0;
   ngOnInit() {
         let user = JSON.parse(localStorage.getItem("user"))
     // this.transactionService.getTransactions(user)
@@ -35,8 +38,28 @@ transactionsName = [];
 
   getCategoryNames(){
     this.transactionsName = this.transactions.map((transaction)=>{
-      console.log(transaction.category[0].split("&nbsp; ")[1].split("<p>")[0])
+      
+      // this.totalSum = this.totalSum + transaction.amount;
+      let key = transaction.category[0].split("&nbsp; ")[1].split("<p>")[0]
+      this.charObj[key] == undefined ? 
+      this.charObj[key] = transaction.amount :
+      this.charObj[key] += transaction.amount
     })
+
+    this.tempArr = Object.keys(this.charObj);
+
+    console.log(this.doughnutChartLabels);
+    
+    this.doughnutChartData = this.tempArr.map((key)=>{
+      return this.charObj[key]
+    })
+    this.tempArr.forEach((arr) => {
+this.doughnutChartLabels.push(arr)
+    })
+        
+
+    console.log("OBJECTTT",this.charObj);
+    
   }
 
   // theNames = [];
@@ -105,7 +128,7 @@ transactionsName = [];
     // pointHoverBorderColor:["#333", "#333","#333","#333","#333","#333","#333","#333","#333","#333"]
   }];
  
-  public doughnutChartLabels:string[] = ['food','food','food', "food","ufie","hfire", "7hcdi", "8hudiw", "9fioee", "10ufivehe"];
+  public doughnutChartLabels:string[] = [];
   public doughnutChartData:number[] = [30,50,25,75,45,32,89,22,36,64];
 
   public chartHovered(e:any):void {
