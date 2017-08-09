@@ -52,6 +52,9 @@ export class OverlayExpComponent implements OnInit {
   }
 
 
+  errorMessage : boolean=true;
+
+
   // ====== DATA ====== //
 
   accounts = [

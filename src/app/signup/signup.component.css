@@ -11,12 +11,13 @@ body {
 .mainbox {
     /* background: linear-gradient(135deg, #179a6c) 0%, #aed86d no-repeat; */
     background: linear-gradient(to bottom right, rgba(23, 154, 108, 1), rgba(174, 215, 109, 1)) no-repeat;
-    height: 100vh;
+    height: 100%;
     color: #fff;
-    min-height: 800px;
     margin: 0;
     padding: 0;
     padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
 }
 
 @media only screen and (min-width: 768px) {
