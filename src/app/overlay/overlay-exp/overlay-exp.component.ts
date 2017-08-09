@@ -43,17 +43,17 @@ export class OverlayExpComponent implements OnInit {
     this.hide.emit(this.toggleVar);
   }
 
-  submitForm(myForm) {
-  this.transactionService.add(myForm.value).subscribe((res) => {}, (err) => {
-      console.log('error add() not working,check tr.service');
-      
-    });
+  submitForm(myForm: NgForm) {
+    console.log("FORM", myForm.value);
+    if (myForm.value.account != undefined && myForm.value.amount != undefined && myForm.value.category != undefined && myForm.value.selectedDate != undefined) {
+      this.transactionService.add(myForm.value).subscribe((res) => { }, (err) => {
+        console.log('error add() not working,check tr.service');
+      });
+    }
+    myForm.resetForm();
+    console.log('reset from submit', myForm.value);
     this.close_classExp();
   }
-
-
-  errorMessage : boolean=true;
-
 
   // ====== DATA ====== //
 
@@ -78,7 +78,6 @@ export class OverlayExpComponent implements OnInit {
     {value: '<div><i class="fa fa-thumbs-up" aria-hidden="true"></i></div><div class="cat"><p>&nbsp; Freelance<p></div>', viewValue: 'Freelance'},
     {value: '<div><i class="fa fa-star" aria-hidden="true"></i></div><div class="cat"><p>&nbsp; Other<p></div>', viewValue: 'Other'}
   ];
-
 
   ngOnInit() {
   }
