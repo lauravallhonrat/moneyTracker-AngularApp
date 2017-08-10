@@ -1,13 +1,13 @@
-import { 
-  Component, 
-  OnInit, 
-  HostListener, 
-  Directive, 
-  HostBinding, 
-  Output, 
-  Input, 
+import {
+  Component,
+  OnInit,
+  HostListener,
+  Directive,
+  HostBinding,
+  Output,
+  Input,
   EventEmitter,
-  ViewEncapsulation 
+  ViewEncapsulation
 } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
 import {Transaction} from '../../transactions/transactions.model';
 
 @Component({
-  selector: 'app-overlay-exp', 
+  selector: 'app-overlay-exp',
   templateUrl: './overlay-exp.component.html',
   styleUrls: ['./overlay-exp.component.css']
 })
@@ -40,7 +40,14 @@ export class OverlayExpComponent implements OnInit {
   @Output() hide = new EventEmitter<boolean>();
 
   close_classExp() {
+    
+    setTimeout(function() {
+      this.errorMessage = true;
+    
+    }, 1000);
     this.hide.emit(this.toggleVar);
+    
+    // I want to make the error message disappear if it was there and I close the exp overlay
   }
 
   submitForm(myForm: NgForm) {
@@ -49,10 +56,26 @@ export class OverlayExpComponent implements OnInit {
       this.transactionService.add(myForm.value).subscribe((res) => { }, (err) => {
         console.log('error add() not working,check tr.service');
       });
+      // I HAVE ADDED THIS HERE!
+      myForm.resetForm();
+      console.log('reset from submit', myForm.value);
+      this.close_classExp();
     }
-    myForm.resetForm();
-    console.log('reset from submit', myForm.value);
-    this.close_classExp();
+
+    // else statement for error on the way
+    else {
+      this.errorMessageShown();
+    }
+    // THIS STUFF IS ORIGINALLY HERE FROM LAURA
+    // myForm.resetForm();
+    // console.log('reset from submit', myForm.value);
+    // this.close_classExp();
+  }
+
+  errorMessage : boolean=true;
+
+  errorMessageShown() {
+    this.errorMessage = !this.errorMessage;
   }
 
   // ====== DATA ====== //

@@ -89,6 +89,9 @@
                 <button class="btn btn-exp" type="submit">ADD THIS</button>
             </div>
         </form>
+        <div class="alert alert-danger" role="alert" [hidden]="errorMessage">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>You need to fill all the fields. <span (click)="errorMessageShown()" id="understood">Understood</span>
+        </div>
 
     </div>
 </div>
