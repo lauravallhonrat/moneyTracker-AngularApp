@@ -52,41 +52,6 @@ export class ChartsComponent implements OnInit {
   }
 
 
-  // ============= BAR CHART ============== //
-  public barChartOptions: any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-
-  public barChartLabels: string[] = ['2 weeks ago', 'last week', 'this week'];
-  public barChartType: string = 'bar';
-  public barChartLegend: boolean = true;
-
-  public barChartData: any[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Expense' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Income' }
-  ];
-
-  public barChartColors: any[] = [
-    { // first color
-      backgroundColor: '#EA5127',
-      borderColor: '#F2FEF1)',
-      pointBackgroundColor: 'rgba(225,10,24,0.2)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(225,10,24,0.2)'
-    },
-    { // second color
-      backgroundColor: '#AED87C',
-      borderColor: '#F2FEF1',
-      pointBackgroundColor: 'rgba(225,10,24,0.2)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(225,10,24,0.2)'
-    }];
-
-
-
   // ============= DONUT ============== //
 
 

@@ -25,7 +25,6 @@ body {
         background: linear-gradient(to bottom right, rgba(23, 154, 108, 1), rgba(174, 215, 109, 1)) no-repeat;
         height: 100vh;
         color: #fff;
-        min-height: 800px;
         margin: 0;
         padding: 0;
         padding-top: 20px;

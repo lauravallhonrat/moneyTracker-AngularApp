@@ -64,6 +64,7 @@ export class OverlayExpComponent implements OnInit {
 
     // else statement for error on the way
     else {
+      myForm.resetForm();
       this.errorMessageShown();
     }
     // THIS STUFF IS ORIGINALLY HERE FROM LAURA
@@ -76,6 +77,7 @@ export class OverlayExpComponent implements OnInit {
 
   errorMessageShown() {
     this.errorMessage = !this.errorMessage;
+    
   }
 
   // ====== DATA ====== //
