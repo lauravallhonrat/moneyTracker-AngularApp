@@ -12,11 +12,13 @@ import { TransactionService } from '../transactions/transactions.service';
 export class HomeComponent implements OnInit {
   user: Object;
   @Output() featureSelected = new EventEmitter<string>();
+
 constructor(
   	private session: SessionService,
     private router: Router,
     private transactionService: TransactionService
   ) { }
+  
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem("user"));
       console.log(this.user)
