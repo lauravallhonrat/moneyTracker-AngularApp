@@ -13,43 +13,20 @@ export class ChartsComponent implements OnInit {
 transactions: Transaction[];
 transactionsName = [];
   ngOnInit() {
-        let user = JSON.parse(localStorage.getItem("user"))
-    // this.transactionService.getTransactions(user)
-    //   .subscribe((_transactions) => {
-    //     this.transactions = _transactions;
-    //   });
-
-
-      // this.transactions = this.transactionService.get()
+        let user = JSON.parse(localStorage.getItem("user"));
+   
       this.transactionService.getTransactions()
       .subscribe(res => {this.transactions = this.transactionService.get()
           this.getCategoryNames();
         })
 
-      
-      
-
-
   }
-
 
   getCategoryNames(){
     this.transactionsName = this.transactions.map((transaction)=>{
       console.log(transaction.category[0].split("&nbsp; ")[1].split("<p>")[0])
     })
   }
-
-  // theNames = [];
-  // theAmounts = [];
-  // emptyObj = {};
-
-  // getThat() {
-  // this.theNames = Object.keys(obj)
-  // this.theAmounts =  Object.keys(obj).map(key)=> {
-  //   return object[key];
-  // }
-
-
 
 // ============= BAR CHART ============== //
   public barChartOptions:any = {

@@ -10,7 +10,7 @@ import { TransactionService } from '../transactions/transactions.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  user: Object;
   @Output() featureSelected = new EventEmitter<string>();
 constructor(
   	private session: SessionService,
@@ -18,6 +18,13 @@ constructor(
     private transactionService: TransactionService
   ) { }
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem("user"));
+      console.log(this.user)
+    this.transactionService.event.subscribe((data)=>{
+      console.log("user",data)
+      this.user = data;
+      console.log(this.user)
+    })
   }
 //this for navigation expenses/income
   loadedOverlay = 'expense';

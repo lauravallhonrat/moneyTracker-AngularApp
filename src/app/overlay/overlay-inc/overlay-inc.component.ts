@@ -29,7 +29,6 @@ export class OverlayIncComponent
     private router: Router
   ) { }
 
-
   // ====== DATA ====== //
 
   public selectedCategory: string;
@@ -47,7 +46,8 @@ export class OverlayIncComponent
   submitForm(myForm: NgForm) {
     console.log("FORM", myForm.value);
     if (myForm.value.account != undefined && myForm.value.amount != undefined && myForm.value.category != undefined && myForm.value.selectedDate != undefined) {
-      this.transactionService.add(myForm.value).subscribe((res) => { }, (err) => {
+      this.transactionService.add(myForm.value).subscribe((res) => {
+        }, (err) => {    
         console.log('error add() not working,check tr.service');
       });
     }
@@ -55,7 +55,6 @@ export class OverlayIncComponent
     console.log('reset from submit', myForm.value);
     this.close_classInc();
   }
-
 
   ngOnInit() {
    

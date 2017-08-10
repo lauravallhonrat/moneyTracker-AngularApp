@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
               console.log('result ok', result);
               this.router.navigate(['/']);
           } else {
-                console.log('result ko', result);
+                console.log('error on signup ts', result);
               // login failed
               // this.error = 'Username or password is incorrect';
           }
