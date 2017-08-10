@@ -26,7 +26,7 @@ export class SessionService implements CanActivate {
 				.then((res) => res.json())
 				.then((data) => {
 					this.isAuth.emit(true);
-					this.user = JSON.parse(localStorage.getItem('user'))
+					this.user = JSON.parse(localStorage.getItem('user'));
 					this.token = localStorage.getItem('token');
 					return true
 				})
@@ -77,7 +77,8 @@ export class SessionService implements CanActivate {
 					this.token = token;
 					this.user = {
 						_id: user._id,
-						username: user.username
+						username: user.username,
+						balanceAmount: user.balanceAmount
 					}
 
 					this.isAuth.emit(true);

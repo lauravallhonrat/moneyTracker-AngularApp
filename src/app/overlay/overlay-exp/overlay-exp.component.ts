@@ -66,6 +66,7 @@ export class OverlayExpComponent implements OnInit {
     else {
       myForm.resetForm();
       this.errorMessageShown();
+      myForm.resetForm();
     }
     // THIS STUFF IS ORIGINALLY HERE FROM LAURA
     // myForm.resetForm();

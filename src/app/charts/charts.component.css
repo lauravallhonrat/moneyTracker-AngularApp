@@ -86,10 +86,6 @@ img {
     font-size: 1.3em;
 }
 
-[hidden] {
-    display: none !important;
-}
-
 .big-box {
     animation: 'bigboxon' 1s ease-in;
     animation-play-state: paused;
