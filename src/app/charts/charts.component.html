@@ -1,12 +1,10 @@
 <div class="box" id="bot">
     <p>Where your money went</p>
-    <div style="display: block" [hidden]="chartsHidden">
+    <div [hidden]="this.transactions.length < 1">
         <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [colors]="doughnutChartColors" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
     </div>
 
-
-
-    <div class="fox-comp" [hidden]="foxHidden">
+    <div [hidden]="this.transactions.length > 0" class="fox-comp">
 
         <div class="bubblebox">
             <div class="bubble">

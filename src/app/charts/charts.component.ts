@@ -10,7 +10,8 @@ export class ChartsComponent implements OnInit {
 
   constructor(private transactionService: TransactionService) { }
   @Input() transaction: Transaction;
-  transactions: Transaction[];
+
+  transactions = [];
   transactionsName = [];
   tempArr = [];
   charObj = {};
@@ -18,7 +19,6 @@ export class ChartsComponent implements OnInit {
 
 
   foxHidden : boolean = false;
-  chartsHidden : boolean = true;
 
 
   ngOnInit() {
@@ -28,7 +28,6 @@ export class ChartsComponent implements OnInit {
     //     this.transactions = _transactions;
     //   });
 
-
     // this.transactions = this.transactionService.get()
     this.transactionService.getTransactions()
       .subscribe(res => {
@@ -36,25 +35,7 @@ export class ChartsComponent implements OnInit {
       this.charObj = this.transactionService.getCategoryNames()  
       console.log("COMPONENTTTTTT", this.charObj);
       this.getCategoryNames()
-      })
-
-// ==================================== //
-// ============ FOX SHOWN ============= //
-
-    // if (this.charObj["labels"][0].length !== 0) {
-    //   this.foxHidden = true;
-    //   this.chartsHidden = false;
-    //   console.log("CHARRRRRRRRRRRRRRRRRRRRRRRT MONTREE");
-    
-    // } else {
-    //   this.foxHidden = false;
-    //   this.chartsHidden = true;
-    //   console.log("RENAAAAAAAAAAAAAAAAAAAAAAARD MONTRE");
-    // }
-
-  // ============ FOX SHOWN ============= //
-  // ==================================== //
-
+      });
   }
 
 
@@ -87,7 +68,6 @@ export class ChartsComponent implements OnInit {
   ];
 
   public barChartColors: any[] = [
-    // backgroundColor: ["#681150", "#B72935", "#CC3335", "#EA5127", "#FF673A", "#FFA439", "#F0DB4A", "#AED87C", "#68BB6D", "#2FA46C" ], 
     { // first color
       backgroundColor: '#EA5127',
       borderColor: '#F2FEF1)',
@@ -118,11 +98,8 @@ export class ChartsComponent implements OnInit {
   }
 
   public doughnutChartColors: any[] = [{
-    backgroundColor: ["#681150", "#B72935", "#CC3335", "#EA5127", "#FF673A", "#FFA439", "#F0DB4A", "#AED87C", "#68BB6D", "#2FA46C"],
-    borderColor: ["#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1"],
-    // pointBackgroundColor: ["#fff", "#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff"],
-    // pointHoverBackgroundColor: ["#fff", "#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff"], 
-    // pointHoverBorderColor:["#333", "#333","#333","#333","#333","#333","#333","#333","#333","#333"]
+    backgroundColor: ["#681150", "#CC3335", "#EA5127", "#FF673A", "#FFA439", "#F0DB4A", "#AED87C", "#68BB6D", "#2FA46C"],
+    borderColor: ["#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1", "#F2FEF1"]
   }];
 
   public doughnutChartLabels: string[] = [];
