@@ -39,7 +39,7 @@ export class TransactionsItemsComponent implements OnInit {
     
      this.transactionService.remove(this.transaction)
       .subscribe((response) => {}, (err) => {
-
+          
         console.log('error on tr.items, remove not working!')
       });
   }

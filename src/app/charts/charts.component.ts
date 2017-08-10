@@ -20,7 +20,18 @@ constructor(private transactionService: TransactionService) { }
 
   ngOnInit() {
       let user = JSON.parse(localStorage.getItem("user"));
-   
+       this.transactionService.event.subscribe((data)=>{
+            this.transactionService.getTransactions()
+      .subscribe(res => {
+      this.transactions = this.transactionService.get()
+      this.charObj = this.transactionService.getCategoryNames()  
+      this.doughnutChartLabels = this.charObj["labels"]
+      console.log("COMPONENTTTTTT", this.charObj);
+      this.getCategoryNames()
+  
+      });
+    })
+
       this.transactionService.getTransactions()
       .subscribe(res => {
       this.transactions = this.transactionService.get()
@@ -28,17 +39,16 @@ constructor(private transactionService: TransactionService) { }
       console.log("COMPONENTTTTTT", this.charObj);
       this.getCategoryNames()
       });
-
   }
 
+  
   getCategoryNames() {
 
-    console.log("OBJECT ON COMPONENT", this.charObj["amount"]);
-
+    console.log("OBJECT ON COMPONENT", this.charObj);
+           
     this.doughnutChartData = this.charObj["amount"]
-    this.charObj["labels"].forEach((arr) => {
-      this.doughnutChartLabels.push(arr)
-    })
+    this.doughnutChartLabels = this.charObj["labels"]
+      
     console.log("DOUGHNUT", this.doughnutChartData, this.doughnutChartLabels);
     
   }

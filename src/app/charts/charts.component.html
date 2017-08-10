@@ -1,11 +1,10 @@
 <div class="box" id="bot">
     <p>Where your money went</p>
-    <div>
+    <div *ngIf="doughnutChartData.length > 0">
         <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [colors]="doughnutChartColors" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
     </div>
 
     <div class="fox-comp">
-
         <div class="bubblebox">
             <div class="bubble">
                 <p>If you want to see the transactions updated, please reload...</p>

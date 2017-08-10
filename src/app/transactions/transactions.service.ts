@@ -86,6 +86,7 @@ add(transaction) {
 		  		  console.log("service",res)
 		  console.log("service",res.json())
 		  this.transactions.push(res.json().newTransactionEntry);
+		// this.transactions = response.json().transactions;	
 		  this.publish(res.json().user)
 		//publish->communication between sibling components
 	  });
@@ -99,14 +100,15 @@ edit(transaction) {
   }
 
 remove(transaction) {
-
+	console.log("testetstst",transaction)
   	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
   	let options = new RequestOptions({ headers: headers });
   	return this.http.delete(`${this.BASE_URL}/api/transactions/${transaction._id}`, options)
   		.map((response) => {
 			  console.log("THE RESPONSE", response);
 			  
-		this.transactions = response.json();
+		this.transactions = response.json().transactions;
+		  this.publish(response.json())
 		//this.calculateBalance();
 		});
 	}

@@ -24,6 +24,7 @@ constructor(
       console.log(this.user)
     this.transactionService.event.subscribe((data)=>{
       console.log("user",data)
+      localStorage.setItem('user', JSON.stringify(data));
       this.user = data;
       console.log(this.user)
     })
