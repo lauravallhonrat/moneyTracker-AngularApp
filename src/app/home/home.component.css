@@ -118,10 +118,22 @@ h3 {
     color: #fff;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 90%;
 }
 
 .logout a {
     color: #fff;
+}
+
+.logout i {
+    font-size: 0.7em;
+    margin-left: 5px;
+}
+
+.topout {
+    margin-top: 7px;
 }
 
 i {
