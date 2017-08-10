@@ -30,6 +30,7 @@ export class TransactionsItemsComponent implements OnInit {
   ngOnInit() {
     
   }
+  
   onSelected(){
     //this.transactionSelected.emit();//call emit when emitEmitter is used
     //this.transactionService.getThoseTransactions.emit(this.transaction);
