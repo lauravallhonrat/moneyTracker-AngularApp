@@ -19,6 +19,12 @@ export class TransactionService {
 	
 	private transactions: Array<any> = [];
 	private balance = 0;
+	transactionsName = [];
+	tempArrLabels = [];
+	tempArrayAmounts = [];
+	charObj = {};
+	finalObj = {};
+	totalSum = 0;
 	private BASE_URL: string = 'http://localhost:3000';
 
 constructor(
@@ -31,7 +37,34 @@ get(): Array<any> {
 	return this.transactions; 
 }
 
+getCategoryNames() {
+		console.log("transactions on service", this.transactions);
+		this.charObj = {}
+		this.transactionsName = this.transactions.map((transaction) => {
 
+			// this.totalSum = this.totalSum + transaction.amount;
+			let key = transaction.category[0].split("&nbsp; ")[1].split("<p>")[0]
+			this.charObj[key] == undefined ?
+				this.charObj[key] = transaction.amount :
+				this.charObj[key] += transaction.amount
+		})
+		console.log("ON SERVICE", this.charObj);
+		
+		this.tempArrLabels = Object.keys(this.charObj);
+
+		this.tempArrayAmounts = this.tempArrLabels.map((key) => {
+			return this.charObj[key]
+		})
+
+		this.finalObj["labels"] = this.tempArrLabels
+		this.finalObj["amount"] = this.tempArrayAmounts
+		
+		console.log("FINAAAAAL",this.finalObj);
+
+		return this.finalObj
+
+	}
+	
 getTransactions() {
 	let headers = new Headers({ 'Authorization': 'JWT ' + this.session.token });
 	let options = new RequestOptions({ headers: headers });
