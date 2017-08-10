@@ -66,6 +66,7 @@ export class OverlayIncComponent
     // else statement for error on the way
     else {
       this.errorMessageShown();
+      myForm.resetForm();
     }
     // THIS STUFF IS ORIGINALLY HERE FROM LAURA
     // myForm.resetForm();
