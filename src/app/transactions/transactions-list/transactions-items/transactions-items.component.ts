@@ -34,17 +34,22 @@ export class TransactionsItemsComponent implements OnInit {
     //this.transactionSelected.emit();//call emit when emitEmitter is used
     //this.transactionService.getThoseTransactions.emit(this.transaction);
   }
+
   deleteTransaction(){
-    console.log('transaction',this.transaction);
+
+    console.log('------ The transaction from delete transaction',this.transaction);
     
      this.transactionService.remove(this.transaction)
       .subscribe((response) => {}, (err) => {
-
         console.log('error on tr.items, remove not working!')
       });
   }
 
-  // whichIcon(category) {
+  
+}
+
+
+// whichIcon(category) {
   //   switch (category) {
   //     case "Food":
   //       '<i class="fa fa-cutlery" aria-hidden="true"></i>'
@@ -85,6 +90,3 @@ export class TransactionsItemsComponent implements OnInit {
   //       break;
   //   }
   //}
-
-  
-}
