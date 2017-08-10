@@ -1,13 +1,16 @@
 <div class="box" id="bot">
     <p>Where your money went</p>
-    <div style="display: block">
+    <div>
         <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" [colors]="doughnutChartColors" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
     </div>
-</div>
 
-<div class="box">
-    <p>Expenses VS Incomes</p>
-    <div style="display: block">
-        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="barChartColors" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    <div class="fox-comp">
+
+        <div class="bubblebox">
+            <div class="bubble">
+                <p>If you want to see the updates on the chart, please reload...</p>
+            </div>
+        </div>
+        <img src="http://localhost:3000/images/fox-cry.png" alt="the fox should be here">
     </div>
 </div>
