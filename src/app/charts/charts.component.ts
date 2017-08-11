@@ -53,20 +53,12 @@ constructor(private transactionService: TransactionService) { }
     
   }
 
-<<<<<<< HEAD
 
   // ============= DONUT ============== //
 
 
   public doughnutChartType: string = 'doughnut';
 
-=======
-   // ============= DONUT ============== //
-  
- 
-  public doughnutChartType:string = 'doughnut';
- 
->>>>>>> 419cebdda533615ca48366938a81565c11c7c639
   // events
   public chartClicked(e:any):void {
     console.log(e);
